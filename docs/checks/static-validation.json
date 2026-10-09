@@ -1,0 +1,36 @@
+{
+  "static_ok": true,
+  "checks": [
+    "Python syntax parsed",
+    "Frontend and required model paths checked",
+    "HTML and CSS asset references checked",
+    "Current documentation links checked",
+    "Supplied weight files hashed; model execution not tested"
+  ],
+  "errors": [],
+  "weights": [
+    {
+      "path": "models/pretrained/yolov8n-cls.pt",
+      "bytes": 5563076,
+      "sha256": "11fa19f2aea79bc960d680a13f82f22105982b325eb9e17a4a5e1a9f8245980a"
+    },
+    {
+      "path": "models/pretrained/yolov8n-seg.pt",
+      "bytes": 7071756,
+      "sha256": "a7cd8f929e1903d78a12a48efecab430209f18dc46cb96c3599a5980c63c423c"
+    },
+    {
+      "path": "models/trained/dust_yolov8_cls.pt",
+      "bytes": 2973757,
+      "sha256": "d88d67578e79358316c41977d85461ab19f82392ce933d1d34dd4d34aa5183ce"
+    },
+    {
+      "path": "models/trained/panel_yolov8_seg.pt",
+      "bytes": 6773045,
+      "sha256": "c83171c8b88e3921006aea97d1fa4b0626df14f8467cbfaf826d9ffd2e17630d"
+    }
+  ],
+  "runtime_source_missing": [],
+  "runtime_verified": false,
+  "note": "Static checks do not verify app imports, APIs, inference, training or GPU support."
+}

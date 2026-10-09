@@ -1,0 +1,33 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# Uploads, predictions, training artifacts and original private materials
+backend/runtime/
+backend/runs/
+runs/
+Ultralytics/
+data/datasets/
+docs/private/
+*.log
+*.zip
+*.7z
+*.rar
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

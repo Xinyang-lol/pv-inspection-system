@@ -1,0 +1,91 @@
+﻿{
+    "segmentation":  {
+                         "train":  {
+                                       "count":  898,
+                                       "width_min":  163,
+                                       "width_max":  2048,
+                                       "width_mean":  830.61,
+                                       "height_min":  143,
+                                       "height_max":  2048,
+                                       "height_mean":  889.56
+                                   },
+                         "valid":  {
+                                       "count":  98,
+                                       "width_min":  183,
+                                       "width_max":  2048,
+                                       "width_mean":  863.03,
+                                       "height_min":  275,
+                                       "height_max":  2048,
+                                       "height_mean":  901.06
+                                   },
+                         "test":  {
+                                      "count":  99,
+                                      "width_min":  194,
+                                      "width_max":  2048,
+                                      "width_mean":  711.63,
+                                      "height_min":  180,
+                                      "height_max":  2048,
+                                      "height_mean":  783.92
+                                  }
+                     },
+    "classification":  {
+                           "test":  {
+                                        "2_low":  {
+                                                      "count":  635,
+                                                      "width_min":  25,
+                                                      "width_max":  52,
+                                                      "width_mean":  47.85,
+                                                      "height_min":  25,
+                                                      "height_max":  52,
+                                                      "height_mean":  47.85
+                                                  },
+                                        "0_High":  {
+                                                       "count":  642,
+                                                       "width_min":  25,
+                                                       "width_max":  52,
+                                                       "width_mean":  42.28,
+                                                       "height_min":  25,
+                                                       "height_max":  52,
+                                                       "height_mean":  42.28
+                                                   },
+                                        "1_Moderate":  {
+                                                           "count":  644,
+                                                           "width_min":  25,
+                                                           "width_max":  52,
+                                                           "width_mean":  44.97,
+                                                           "height_min":  25,
+                                                           "height_max":  52,
+                                                           "height_mean":  44.97
+                                                       }
+                                    },
+                           "train":  {
+                                         "2_low":  {
+                                                       "count":  2957,
+                                                       "width_min":  25,
+                                                       "width_max":  52,
+                                                       "width_mean":  48.09,
+                                                       "height_min":  25,
+                                                       "height_max":  52,
+                                                       "height_mean":  48.09
+                                                   },
+                                         "0_High":  {
+                                                        "count":  2991,
+                                                        "width_min":  25,
+                                                        "width_max":  52,
+                                                        "width_mean":  41.98,
+                                                        "height_min":  25,
+                                                        "height_max":  52,
+                                                        "height_mean":  41.98
+                                                    },
+                                         "1_Moderate":  {
+                                                            "count":  3002,
+                                                            "width_min":  25,
+                                                            "width_max":  52,
+                                                            "width_mean":  45.05,
+                                                            "height_min":  25,
+                                                            "height_max":  52,
+                                                            "height_mean":  45.05
+                                                        }
+                                     }
+                       }
+}

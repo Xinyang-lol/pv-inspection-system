@@ -1,0 +1,47 @@
+{
+  "ok": true,
+  "python": "3.12.5",
+  "device": "cpu",
+  "environment": {
+    "flask": "3.1.3",
+    "numpy": "2.4.6",
+    "pillow": "12.2.0",
+    "ultralytics": "8.4.174",
+    "torch": "2.14.1",
+    "torchvision": "0.29.1",
+    "PyYAML": "6.0.3"
+  },
+  "checks": [
+    "Homepage, static resources, health, dashboard, samples and sample image: 200",
+    "Missing upload, unknown sample and missing result: expected 400/404",
+    "Real image upload, panel segmentation, tile classification and result image: 200",
+    "All three synthetic samples and result images in explicit demo mode: 200",
+    "Reset clears dashboard history and preserves generated image files"
+  ],
+  "real_inference_mode": "yolo-tile",
+  "real_image_filename": "1_video_resim_1837_jpg.rf.9e0bd8013961d27162eb5992b37fe932.jpg",
+  "real_summary": {
+    "avg_confidence": 0.721,
+    "crack_length": 0,
+    "crack_strength": 0.0,
+    "dirty_panels": 6,
+    "dominant_issue": "灰尘",
+    "dust_coverage": 47.48,
+    "panel_count": 6,
+    "risk_score": 72.82,
+    "stain_coverage": 0,
+    "total_defects": 6
+  },
+  "real_runtime_ms": {
+    "defect": 104.04,
+    "panel": 1008.03,
+    "render": 80.38,
+    "total": 1238.43
+  },
+  "classifier_classes": {
+    "0": "0_High",
+    "1": "1_Moderate",
+    "2": "2_low"
+  },
+  "limitations": "One-image functional verification only; no dataset accuracy, retraining or GPU benchmark."
+}

@@ -1,0 +1,7 @@
+{
+  "manifest_entries": 61417,
+  "all_manifest_files_present": true,
+  "file_sizes_match_manifest": true,
+  "method": "Enumerated all manifest paths and compared byte sizes after extraction; runtime source and model hashes checked separately.",
+  "original_package_preserved": true
+}
