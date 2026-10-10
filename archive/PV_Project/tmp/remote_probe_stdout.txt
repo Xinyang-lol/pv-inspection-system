@@ -1,0 +1,39 @@
+HOST=autodl-container-225ybmv48d-9db2b11d
+USER=root
+PWD=/root
+PY=
+PIP=
+Mon May 11 21:38:44 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.95.05              Driver Version: 580.95.05      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX PRO 6000 Blac...    On  |   00000000:A8:00.0 Off |                  Off |
+| N/A   41C    P0            102W /  600W |       0MiB /  97887MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          30G   53M   30G   1% /
+Filesystem       Size  Used Avail Use% Mounted on
+overlay           30G   53M   30G   1% /
+tmpfs             64M     0   64M   0% /dev
+/dev/md0         150M     0  150M   0% /init
+AutoFS:fswestb1   20T  1.6T   18T   9% /autodl-pub/data
+shm               55G     0   55G   0% /dev/shm
+/dev/sda2        879G  412G  422G  50% /usr/bin/nvidia-smi
+tmpfs            4.0K  4.0K     0 100% /run/nvidia-ctk-hook
+tmpfs            504G     0  504G   0% /proc/acpi
+tmpfs            504G     0  504G   0% /proc/scsi
+tmpfs            504G     0  504G   0% /sys/firmware
+tmpfs            504G     0  504G   0% /sys/devices/virtual/powercap

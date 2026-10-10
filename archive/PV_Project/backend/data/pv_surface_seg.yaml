@@ -1,0 +1,8 @@
+path: 老师给的/yolo8 seg training data/Dataset
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 1
+names:
+  - PV_surface

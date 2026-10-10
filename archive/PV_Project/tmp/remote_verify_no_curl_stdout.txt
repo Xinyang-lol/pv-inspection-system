@@ -1,0 +1,2 @@
+3408 bash -c set +e; pkill -KILL curl 2>/dev/null || true; pgrep -af "curl|train_teacher_models|run_train_100e" || true; ls -lh /root/.config/Ultralytics/Arial.ttf 2>/dev/null || true
+-rw-r--r-- 1 root root 739K May 11 22:15 /root/.config/Ultralytics/Arial.ttf

@@ -1,0 +1,3 @@
+stopping=2958
+   PID STAT CMD
+3061 bash -c set +e; PID=$(cat /root/pv_yolo_train/train_100e.pid 2>/dev/null); echo stopping=$PID; pkill -TERM -P "$PID" 2>/dev/null || true; kill -TERM "$PID" 2>/dev/null || true; sleep 3; pkill -KILL -P "$PID" 2>/dev/null || true; kill -KILL "$PID" 2>/dev/null || true; ps -p "$PID" -o pid,stat,cmd 2>/dev/null || true; pgrep -af "train_teacher_models|yolo26n|run_train_100e" || true

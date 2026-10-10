@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>光伏板多缺陷智能检测平台</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/comon0.css?v=preview-fit-20260512" />
+  </head>
+  <body>
+    <div class="loading">
+      <div class="loadbox">
+        <img src="images/loading.gif" alt="loading" /> 页面加载中...
+      </div>
+    </div>
+
+    <div class="head">
+      <h1>光伏板多缺陷智能检测平台</h1>
+      <div class="head-tools">
+        <span class="status-chip status-demo" id="modeBadge">DEMO</span>
+        <div class="time" id="showTime">2026/04/08 22:30:00</div>
+      </div>
+    </div>
+
+    <div class="mainbox">
+      <ul class="clearfix">
+        <li>
+          <div class="boxall box-chart box-chart-tall">
+            <div class="alltitle">面板风险排行</div>
+            <div class="boxnav" id="panelRankingChart"></div>
+          </div>
+          <div class="boxall box-model-panel">
+            <div class="alltitle">模型运行状态</div>
+            <div class="boxnav">
+              <div class="model-list" id="modelList"></div>
+              <div class="chart-wrap compact-chart" id="runtimeChart"></div>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="boxall box-task-panel">
+            <div class="alltitle">任务控制与总览</div>
+            <div class="boxnav">
+              <div class="toolbar">
+                <label class="upload-trigger">
+                  <input type="file" id="imageInput" accept="image/*" multiple />
+                  <span>选择图像</span>
+                </label>
+                <button class="action-btn" id="analyzeButton">开始分析</button>
+                <div class="hint-text" id="uploadHint">
+                  默认支持 JPG / PNG，后端会自动切换真实推理或演示模式。
+                </div>
+              </div>
+              <div class="connection-bar">
+                <span>页面来源：<b id="pageMode">Flask 直连</b></span>
+                <span>API 地址：<b id="apiBaseLabel">/api</b></span>
+                <span>接口状态：<b id="apiStatus">检查中</b></span>
+              </div>
+              <div class="file-bar">
+                <span>已选文件：<b id="selectedFileName">未选择</b></span>
+                <span>上传状态：<b id="uploadState">待上传</b></span>
+              </div>
+              <div class="sample-strip">
+                <div class="sample-strip-title">示例样本</div>
+                <div class="sample-grid" id="sampleGrid">
+                  <div class="sample-card sample-empty">
+                    示例图加载后可直接点击分析
+                  </div>
+                </div>
+              </div>
+              <ul class="row h100 clearfix">
+                <li class="col-6">
+                  <div class="sqzs h100">
+                    <p>光伏板风险指数</p>
+                    <h1><span id="riskScore">0</span>分</h1>
+                    <div class="headline-meta">
+                      <span>主异常：<b id="dominantIssue">待分析</b></span>
+                      <span>分析次数：<b id="analysisCount">0</b></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="col-6">
+                  <ul class="row h100 clearfix">
+                    <li class="col-4">
+                      <div class="tit01">灰尘覆盖</div>
+                      <div class="piebox" id="pe01"></div>
+                    </li>
+                    <li class="col-4">
+                      <div class="tit01">裂痕强度</div>
+                      <div class="piebox" id="pe02"></div>
+                    </li>
+                    <li class="col-4">
+                      <div class="tit01">污渍覆盖</div>
+                      <div class="piebox" id="pe03"></div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="boxall box-preview-panel">
+            <div class="alltitle">检测结果预览</div>
+            <div class="boxnav">
+              <div class="preview-shell">
+                <img id="resultPreview" alt="检测结果预览" />
+                <div class="preview-placeholder" id="previewPlaceholder">
+                  上传图像后显示带标注结果
+                </div>
+              </div>
+              <div class="analysis-note" id="analysisNote">
+                这里会显示本地预览、上传成功状态以及后端返回的检测摘要。
+              </div>
+              <div class="preview-footer">
+                <span>最近文件：<b id="lastFilename">待上传图像</b></span>
+                <span
+                  >异常组件：<b id="dirtyPanels">0</b> /
+                  <b id="panelCount">0</b></span
+                >
+                <span>缺陷总数：<b id="totalDefects">0</b></span>
+                <span>平均置信度：<b id="avgConfidence">0%</b></span>
+                <span>总耗时：<b id="totalLatency">0 ms</b></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="boxall box-chart box-chart-wide">
+            <div class="alltitle">巡检趋势</div>
+            <div class="boxnav" id="trendChart"></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="boxall box-chart box-chart-medium">
+            <div class="alltitle">缺陷类型分布</div>
+            <div class="boxnav" id="defectTypeChart"></div>
+          </div>
+          <div class="boxall box-record-panel">
+            <div class="alltitle">最近分析记录与建议</div>
+            <div class="boxnav split-box">
+              <div class="table-shell">
+                <table border="0" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>时间</th>
+                      <th>文件</th>
+                      <th>主异常</th>
+                      <th>风险</th>
+                    </tr>
+                  </thead>
+                  <tbody id="recordTable">
+                    <tr>
+                      <td colspan="4">暂无分析记录</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="recommend-shell">
+                <div class="sub-title">维护建议</div>
+                <ul class="recommend-list" id="recommendList">
+                  <li>上传图像后，系统将根据缺陷覆盖率与裂痕强度生成建议。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="boxall box-chart box-chart-medium">
+            <div class="alltitle">缺陷严重度</div>
+            <div class="boxnav" id="severityChart"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="reset-zone">
+      <button class="reset-btn" id="resetDashboardButton" type="button">恢复默认状态</button>
+    </div>
+
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+  </body>
+</html>

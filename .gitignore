@@ -31,3 +31,7 @@ docs/private/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Preserve every file in the original project snapshot, including prior outputs.
+!archive/
+!archive/**

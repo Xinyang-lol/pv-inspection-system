@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+  File "/root/miniconda3/lib/python3.12/site-packages/ultralytics/models/yolo/model.py", line 76, in __init__
+    super().__init__(model=model, task=task, verbose=verbose)
+  File "/root/miniconda3/lib/python3.12/site-packages/ultralytics/engine/model.py", line 144, in __init__
+    self._load(model, task=task)
+  File "/root/miniconda3/lib/python3.12/site-packages/ultralytics/engine/model.py", line 283, in _load
+    self.model, self.ckpt = load_checkpoint(weights)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 1525, in load_checkpoint
+    ckpt, weight = torch_safe_load(weight)  # load ckpt
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 1463, in torch_safe_load
+    ckpt = torch_load(file, map_location="cpu")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/ultralytics/utils/patches.py", line 181, in torch_load
+    return torch.load(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 1491, in load
+    with _open_zipfile_reader(opened_file) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 771, in __init__
+    super().__init__(torch._C.PyTorchFileReader(name_or_buffer))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: PytorchStreamReader failed reading zip archive: failed finding central directory

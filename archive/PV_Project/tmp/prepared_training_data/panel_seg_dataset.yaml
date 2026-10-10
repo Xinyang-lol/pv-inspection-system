@@ -1,0 +1,7 @@
+﻿path: D:/大创yolo/yolo8 seg training data/Dataset
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: panel

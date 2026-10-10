@@ -1,0 +1,9 @@
+stopping=3134
+font=/root/miniconda3/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf
+total 1.5M
+-rw-r--r-- 1 root root 739K May 11 22:15 Arial.Unicode.ttf
+-rw-r--r-- 1 root root 739K May 11 22:15 Arial.ttf
+-rw-r--r-- 1 root root   45 May 11 22:10 persistent_cache.json
+-rw-r--r-- 1 root root  486 May 11 22:10 settings.json
+3226 curl -# -L https://github.com/ultralytics/assets/releases/download/v0.0.0/Arial.ttf -o /root/.config/Ultralytics/Arial.ttf --retry 3 -C -
+3317 bash -c set +e PID=$(cat /root/pv_yolo_train/train_100e.pid 2>/dev/null) echo stopping=$PID pkill -TERM -P "$PID" 2>/dev/null || true kill -TERM "$PID" 2>/dev/null || true sleep 3 pkill -KILL -P "$PID" 2>/dev/null || true kill -KILL "$PID" 2>/dev/null || true FONT=$(find /root/miniconda3 -name 'DejaVuSans.ttf' 2>/dev/null | head -1) echo font=$FONT mkdir -p /root/.config/Ultralytics if [ -n "$FONT" ]; then cp "$FONT" /root/.config/Ultralytics/Arial.ttf; cp "$FONT" /root/.config/Ultralytics/Arial.Unicode.ttf; fi ls -lh /root/.config/Ultralytics pgrep -af "train_teacher_models|run_train_100e|Arial.ttf" || true

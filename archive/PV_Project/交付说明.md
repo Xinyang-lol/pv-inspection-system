@@ -1,0 +1,46 @@
+﻿# 完整项目交付说明
+
+本包包含项目目录中的全部原有文件（含前后端、模型、两套训练数据及老师提供的数据、论文、答辩材料、运行结果、tmp 临时资料），以及本次补充的安装与交付工具。不包含本压缩包自身及其输出目录 delivery。
+
+## 运行
+
+1. 安装 Python（代码要求 3.10 或以上；本次使用本机 Python 3.14.2 验证）。
+2. 将完整压缩包解压到可写目录，双击 `安装依赖.cmd`，首次安装需要联网下载 Python 依赖。
+3. 双击 `启动后端.cmd`，浏览器打开 http://127.0.0.1:5000 。前端由 Flask 一起提供，不需要 Node.js 或单独启动前端。
+4. 停止时双击 `停止后端.cmd`。日志在 backend/runtime/server.out.log 和 server.err.log。
+
+也可在项目根目录运行：
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r backend/requirements.txt
+.\.venv\Scripts\python.exe -m backend.app
+```
+
+本包不是离线 Python 安装包，没有打包本机外部虚拟环境。依赖范围见 backend/requirements.txt，本机验证版本见 delivery_environment.txt；其他系统和 GPU 环境没有验证。
+
+## 模型与功能边界
+
+已包含 backend/models/panel_yolov8_seg.pt 和 dust_yolov8_cls.pt，实际流程为光伏板分割、切片、积灰等级分类。根目录另含 yolov8n-seg.pt 和 yolov8n-cls.pt 初始权重。
+
+可选的 backend/models/defect_yolo11_seg.pt 原项目没有，未伪造或用其他模型冒充。真实裂痕、生物污渍分割仍需相应标注数据与训练权重。演示模式的模拟结果不能作为真实检测效果。
+
+PowerShell 中可设置 `$env:PV_DEMO_MODE='true'` 后从同一窗口启动程序，启用演示模式。其他环境变量：PV_PANEL_MODEL、PV_TILE_CLS_MODEL、PV_DEFECT_MODEL、PV_DEVICE（默认 cpu）、PV_HOST、PV_PORT（默认 5000）。程序直接读取环境变量，不会自动加载 .env。
+
+## 训练与辅助工具
+
+在项目根目录运行 `python -m backend.train_teacher_models --stage all --epochs 100 --device cpu --copy-best`。也可双击 tools/train_teacher_yolo8.cmd。模型默认使用老师给的目录中的数据。分割训练入口会生成与解压位置对应的运行时 YAML。
+
+生成示例图：`python tools/generate_samples.py`。生成答辩 PPT 的 PowerShell 工具需要本机安装 Microsoft PowerPoint。已有论文和演示文稿均已随包保留。
+
+原始数据和 tmp 内的历史训练配置、日志保留原样，里面可能记录旧电脑或远程环境的路径；重新训练请使用上述入口。论文旧链接可能同样指向原电脑。
+
+## 本次修复与核验
+
+- 启动、停止、训练及材料生成工具改为根据项目目录定位，移除主流程的个人电脑路径依赖。
+- 补充安装依赖.cmd，显式声明 PyYAML 依赖。
+- 更新根目录 README 中本机绝对链接和过时说明。
+- validation_report.json 记录本次接口和真实模型推理检查结果。
+- ZIP 内 PACKAGE_MANIFEST.json 记录每个文件的相对路径、字节数、SHA-256；ZIP 外附完整压缩包 SHA-256 和核验结果。
+
+原有上传图、运行日志、训练临时资料也在包内，转交他人前请按接收范围检查这些原始资料。

@@ -1,0 +1,4 @@
+pid=2958
+log=/root/pv_yolo_train/logs/train_100e_20260511_220612.log
+   PID STAT     ELAPSED CMD
+  2958 S          00:05 bash /root/pv_yolo_train/run_train_100e.sh

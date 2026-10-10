@@ -1,0 +1,11 @@
+{
+  "snapshot_root": "archive/PV_Project",
+  "files": 61418,
+  "total_bytes": 1594628862,
+  "all_source_files_included": true,
+  "all_snapshot_hashes_verified": true,
+  "original_manifest_entries": 61417,
+  "additional_original_file": "PACKAGE_MANIFEST.json",
+  "large_file_storage": "Git LFS for the two remote_train_payload ZIP files",
+  "original_source_preserved": true
+}

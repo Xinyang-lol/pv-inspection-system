@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def source_files(extension: str):
     for directory, folders, filenames in os.walk(ROOT):
-        folders[:] = [name for name in folders if name not in {".git", ".venv", "__pycache__", "private", "datasets", "runtime", "runs"}]
+        folders[:] = [name for name in folders if name not in {".git", ".venv", "__pycache__", "private", "datasets", "runtime", "runs", "archive"}]
         for filename in sorted(filenames):
             if filename.endswith(extension):
                 yield Path(directory) / filename

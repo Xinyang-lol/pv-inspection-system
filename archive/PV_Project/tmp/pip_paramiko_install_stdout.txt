@@ -1,0 +1,20 @@
+Collecting paramiko
+  Downloading paramiko-5.0.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting bcrypt>=3.2 (from paramiko)
+  Using cached bcrypt-5.0.0-cp39-abi3-win_amd64.whl.metadata (10 kB)
+Collecting cryptography>=3.3 (from paramiko)
+  Downloading cryptography-48.0.0-cp311-abi3-win_amd64.whl.metadata (4.3 kB)
+Collecting invoke>=2.0 (from paramiko)
+  Using cached invoke-3.0.3-py3-none-any.whl.metadata (3.2 kB)
+Collecting pynacl>=1.5 (from paramiko)
+  Using cached pynacl-1.6.2-cp38-abi3-win_amd64.whl.metadata (10 kB)
+Requirement already satisfied: cffi>=2.0.0 in c:\users\lixin\pycharmmiscproject\.venv\lib\site-packages (from cryptography>=3.3->paramiko) (2.0.0)
+Requirement already satisfied: pycparser in c:\users\lixin\pycharmmiscproject\.venv\lib\site-packages (from cffi>=2.0.0->cryptography>=3.3->paramiko) (3.0)
+Downloading paramiko-5.0.0-py3-none-any.whl (208 kB)
+Using cached bcrypt-5.0.0-cp39-abi3-win_amd64.whl (150 kB)
+Downloading cryptography-48.0.0-cp311-abi3-win_amd64.whl (3.8 MB)
+   ---------------------------------------- 3.8/3.8 MB 5.0 MB/s eta 0:00:00
+Using cached invoke-3.0.3-py3-none-any.whl (160 kB)
+Using cached pynacl-1.6.2-cp38-abi3-win_amd64.whl (239 kB)
+Installing collected packages: invoke, bcrypt, pynacl, cryptography, paramiko
+Successfully installed bcrypt-5.0.0 cryptography-48.0.0 invoke-3.0.3 paramiko-5.0.0 pynacl-1.6.2

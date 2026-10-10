@@ -1,0 +1,6 @@
+extracted_files 16180
+backend_exists True
+seg_train_images 898
+cls_train_high 2991
+-rw-r--r-- 1 root root 4.0K May 11 22:05 /root/pv_yolo_train/project/backend/train_teacher_models.py
+-rw-r--r-- 1 root root 6.8M May 11 22:05 /root/pv_yolo_train/project/yolov8n-seg.pt

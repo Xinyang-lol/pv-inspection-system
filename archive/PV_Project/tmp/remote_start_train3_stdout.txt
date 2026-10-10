@@ -1,0 +1,7 @@
+pid=3134
+log=/root/pv_yolo_train/logs/train_100e_noamp_20260511_221012.log
+   PID STAT     ELAPSED CMD
+  3134 S          00:08 bash /root/pv_yolo_train/run_train_100e.sh
+Creating new Ultralytics Settings v0.0.6 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/root/.config/Ultralytics/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.

@@ -1,0 +1,7 @@
+Python 3.12.3
+torch True
+ultralytics False
+torch_version 2.8.0+cu128
+cuda_available True
+cuda_version 12.8
+device NVIDIA RTX PRO 6000 Blackwell Server Edition

@@ -2,7 +2,9 @@
 
 面向光伏组件巡检的 Python / Flask 项目，包含图像上传与分析接口、YOLOv8 训练入口、两份已训练权重，以及基于 ECharts 的可视化看板。
 
-项目包含应用源码、两份已训练权重和三张合成示例图，使用 CPU 即可运行。原始训练数据与历史运行文件保留在本地，GitHub 仓库提供数据布局、导入脚本和训练配置。论文草稿及答辩材料单独归入 `docs/`。
+项目包含应用源码、两份已训练权重和三张合成示例图，使用 CPU 即可运行。**完整原始项目的 61,418 个文件全部保存在 [archive/PV_Project/](archive/PV_Project/)**，包含训练数据、老师提供的资料、申报书、论文、PPT 模板、字体、临时文件与历史运行记录。论文草稿及答辩材料另归入 `docs/`，供直接查看。
+
+完整副本的文件内容与原解压目录逐文件核对 SHA-256；两份超过普通 Git 文件上限的 ZIP 使用 Git LFS。下载完整项目时请安装 Git LFS，使用下方克隆步骤。原文件总量、校验方式和分类入口见 [完整原始项目说明](archive/README.md)。
 
 ## 功能与模型范围
 
@@ -46,6 +48,9 @@ pv-inspection-system/
 │   └── datasets/                   # 本地数据，不上传 GitHub
 ├── samples/                        # 合成示例图
 ├── scripts/                        # 安装、启动、导入数据、训练辅助与核验
+├── archive/
+│   ├── README.md                   # 完整原始资料的分类入口
+│   └── PV_Project/                 # 全部 61,418 个原始文件，保留原目录
 ├── docs/                           # 架构、接口、训练及完整性说明
 │   ├── checks/                     # 静态核验与应用运行验证记录
 │   ├── papers/                     # 论文草稿、图表和历史基线
@@ -56,17 +61,19 @@ pv-inspection-system/
 └── README.md
 ```
 
-运行生成的上传图片、结果图和历史记录位于 `backend/runtime/`，训练输出位于 `backend/runs/`。这些目录与 `data/datasets/`、本地虚拟环境均不进入版本控制。
+整理后的应用将新上传图片、结果图和历史记录写入 `backend/runtime/`，训练输出位于 `backend/runs/`；这些新增运行目录、`data/datasets/` 和本地虚拟环境不进入版本控制。原项目已有的同类文件全部保留在 `archive/PV_Project/` 并上传。
 
 ## 安装与运行
 
-需要 Python 3.10 或以上、可用的 Python 包下载网络。后端直接提供前端页面，无需安装 Node.js。默认使用 CPU。
+需要 Python 3.10 或以上、Git、Git LFS，以及可用的 Python 包下载网络。后端直接提供前端页面，无需安装 Node.js。默认使用 CPU。
 
 ### Windows
 
 ```powershell
+git lfs install
 git clone https://github.com/Xinyang-lol/pv-inspection-system.git
 cd pv-inspection-system
+git lfs pull
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m backend.app
@@ -77,8 +84,10 @@ python -m venv .venv
 ### Linux / macOS
 
 ```bash
+git lfs install
 git clone https://github.com/Xinyang-lol/pv-inspection-system.git
 cd pv-inspection-system
+git lfs pull
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python -m backend.app
@@ -115,13 +124,13 @@ $env:PV_HOST = "127.0.0.1"
 
 ## 模型训练
 
-原训练图像与标签不上传 GitHub。已有原完整项目时，可导入原数据目录，优先使用“老师给的”目录中的数据：
+原训练图像与标签已完整上传至 `archive/PV_Project/`。克隆后可直接导入到整理后的标准训练目录，优先使用“老师给的”目录中的数据：
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/import_datasets.py --source "E:\path\to\PV_Project"
+.\.venv\Scripts\python.exe scripts/import_datasets.py --source archive/PV_Project
 ```
 
-导入会优先创建文件硬链接，不能创建时复制文件；使用 `--copy` 可强制复制。分割、分类数据分别整理到 `data/datasets/panel-seg/`、`tile-cls/`。也可按 [数据集说明](data/README.md) 自行准备数据。随后在仓库根目录执行：
+导入会优先创建文件硬链接，不能创建时复制文件；使用 `--copy` 可强制复制。分割、分类数据分别整理到 `data/datasets/panel-seg/`、`tile-cls/`。`--source` 也可指定其他完整项目路径；不会改动原始资料。随后在仓库根目录执行：
 
 ```bash
 python -m backend.train_teacher_models --stage all --epochs 100 --device cpu --copy-best
@@ -166,4 +175,4 @@ python scripts/verify_runtime.py --image /path/to/real-panel.jpg
 - [论文资料](docs/papers/README.md)与[答辩资料](docs/presentations/README.md)：研究草稿、图表、PPT 和讲稿，独立于应用运行。
 - [原始交付说明](docs/reference/original-delivery.md)及[历史环境](docs/reference/original-environment.txt)：保留作参考，其中部分文件和路径已不适用于当前副本。
 
-项目申报书、原打包清单和原验证报告保留在整理后的本地 `docs/private/`，不上传公开仓库。原验证报告来自另一个路径和环境，不作为本次核验结果。
+项目申报书、原打包清单和原验证报告已随完整副本上传到 `archive/PV_Project/`。原验证报告来自另一个路径和环境，不作为本次核验结果。

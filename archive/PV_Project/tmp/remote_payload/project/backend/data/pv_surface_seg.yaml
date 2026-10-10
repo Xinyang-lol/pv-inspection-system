@@ -1,0 +1,8 @@
+﻿path: /root/pv_yolo_train/project/datasets/pv_surface_seg
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 1
+names:
+  - PV_surface

@@ -1,0 +1,214 @@
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+total 16
+drwx------ 1 root root 4096 May 11 21:38 .
+drwxr-xr-x 1 root root  139 May 11 21:33 ..
+-rw-r--r-- 1 root root 3150 May 19  2025 .bashrc
+drwx------ 2 root root   42 May 11 21:38 .cache
+drwxr-xr-x 2 root root   38 May 19  2025 .conda
+-rw-r--r-- 1 root root  243 May 11 21:33 .condarc
+drwxr-xr-x 2 root root   10 May 11 21:33 .ipython
+drwxr-xr-x 3 root root   25 May 11 21:33 .jupyter
+drwxr-xr-x 3 root root   27 May 11 21:33 .local
+-rw-r--r-- 1 root root  161 Jul  9  2019 .profile
+drwxr-xr-x 2 root root   38 May 11 21:33 .ssh
+lrwxrwxrwx 1 root root   21 May 11 21:33 autodl-pub -> ../../autodl-pub/data
+drwxr-xr-x 3 root root   29 May 11 21:33 autodl-tmp
+drwxr-xr-x 1 root root   25 May 19  2025 miniconda3
+drwxr-xr-x 2 root root   10 May 11 21:33 tf-logs
+total 48032
+drwxr-xr-x 1 root root     4096 Aug  7  2025 .
+drwxr-xr-x 1 root root       25 May 19  2025 ..
+lrwxrwxrwx 1 root root        9 May 19  2025 2to3 -> 2to3-3.12
+-rwxr-xr-x 1 root root      108 May 19  2025 2to3-3.12
+-rwxr-xr-x 2 root root    30224 Sep  5  2023 acountry
+-rwxr-xr-x 1 root root      190 May 19  2025 activate
+-rwxr-xr-x 2 root root    34640 Sep  5  2023 adig
+-rwxr-xr-x 2 root root    21584 Sep  5  2023 ahost
+-rwxr-xr-x 1 root root      229 May 19  2025 archspec
+-rwxr-xr-x 2 root root    92512 Apr 30  2024 bsdcat
+-rwxr-xr-x 2 root root   814192 Apr 30  2024 bsdcpio
+-rwxr-xr-x 2 root root   864376 Apr 30  2024 bsdtar
+-rwxr-xr-x 2 root root   299464 May  1  2024 bunzip2
+-rwxr-xr-x 2 root root   299464 May  1  2024 bzcat
+lrwxrwxrwx 1 root root        6 May 19  2025 bzcmp -> bzdiff
+-rwxr-xr-x 2 root root     2140 May  1  2024 bzdiff
+lrwxrwxrwx 1 root root        6 May 19  2025 bzegrep -> bzgrep
+lrwxrwxrwx 1 root root        6 May 19  2025 bzfgrep -> bzgrep
+-rwxr-xr-x 2 root root     2054 May  1  2024 bzgrep
+-rwxr-xr-x 2 root root   299464 May  1  2024 bzip2
+-rwxr-xr-x 2 root root    30920 May  1  2024 bzip2recover
+lrwxrwxrwx 1 root root        6 May 19  2025 bzless -> bzmore
+-rwxr-xr-x 2 root root     1259 May  1  2024 bzmore
+-rwxr-xr-x 1 root root     6901 May 19  2025 c_rehash
+lrwxrwxrwx 1 root root        3 May 19  2025 captoinfo -> tic
+-rwxr-xr-x 2 root root    14312 Jan 26  2023 clear
+-rwxr-xr-x 1 root root      830 May 19  2025 compile_et
+-rwxr-xr-x 1 root root      517 May 19  2025 conda
+-rwxr-xr-x 1 root root      235 May 19  2025 conda-content-trust
+-rwxr-xr-x 1 root root      154 May 19  2025 conda-env
+-rwxr-xr-x 2 root root    21480 Apr 30  2024 conda2solv
+-rwxr-xr-x 1 root root      240 May 19  2025 cph
+-rwxr-xr-x 1 root root     7262 May 19  2025 curl-config
+-rwxr-xr-x 1 root root      278 May 19  2025 deactivate
+-rwxr-xr-x 1 root root      228 Aug  7  2025 debugpy
+-rwxr-xr-x 1 root root      234 Aug  7  2025 debugpy-adapter
+-rwxr-xr-x 2 root root    34728 Aug 18  2023 derb
+-rwxr-xr-x 1 root root      227 May 19  2025 distro
+-rwxr-xr-x 2 root root    26152 Apr 30  2024 dumpsolv
+-rwxr-xr-x 1 root root      229 Aug  7  2025 echo_supervisord_conf
+-rwxr-xr-x 1 root root      227 Aug  7  2025 f2py
+-rwxr-xr-x 1 root root      228 Aug  7  2025 fonttools
+-rwxr-xr-x 2 root root    21944 Aug 18  2023 genbrk
+-rwxr-xr-x 2 root root    17240 Aug 18  2023 gencfu
+-rwxr-xr-x 2 root root    34960 Aug 18  2023 gencnval
+-rwxr-xr-x 2 root root    37288 Aug 18  2023 gendict
+-rwxr-xr-x 2 root root   195256 Aug 18  2023 genrb
+-rwxr-xr-x 2 root root    31800 Jun 16  2023 gss-client
+-rwxr-xr-x 1 root root      215 Aug  7  2025 httpx
+-rwxr-xr-x 1 root root    22594 May 19  2025 icu-config
+-rwxr-xr-x 2 root root    75464 Aug 18  2023 icuexportdata
+-rwxr-xr-x 2 root root    16864 Aug 18  2023 icuinfo
+lrwxrwxrwx 1 root root        8 May 19  2025 idle3 -> idle3.12
+-rwxr-xr-x 1 root root      106 May 19  2025 idle3.12
+-rwxr-xr-x 2 root root    63536 Jan 26  2023 infocmp
+lrwxrwxrwx 1 root root        3 May 19  2025 infotocap -> tic
+-rwxr-xr-x 2 root root    25888 Apr 30  2024 installcheck
+-rwxr-xr-x 1 root root      235 Aug  7  2025 ipython
+-rwxr-xr-x 1 root root      235 Aug  7  2025 ipython3
+-rwxr-xr-x 1 root root      216 Aug  7  2025 isympy
+-rwxr-xr-x 1 root root      228 Aug  7  2025 jlpm
+-rwxr-xr-x 1 root root     1208 May 19  2025 jsondiff
+-rwxr-xr-x 1 root root     3869 May 19  2025 jsonpatch
+-rwxr-xr-x 1 root root     1848 May 19  2025 jsonpointer
+-rwxr-xr-x 1 root root      224 Aug  7  2025 jsonschema
+-rwxr-xr-x 1 root root      230 Aug  7  2025 jupyter
+-rwxr-xr-x 1 root root      246 Aug  7  2025 jupyter-dejavu
+-rwxr-xr-x 1 root root      228 Aug  7  2025 jupyter-events
+-rwxr-xr-x 1 root root      222 Aug  7  2025 jupyter-execute
+-rwxr-xr-x 1 root root      234 Aug  7  2025 jupyter-kernel
+-rwxr-xr-x 1 root root      272 Aug  7  2025 jupyter-kernelspec
+-rwxr-xr-x 1 root root      227 Aug  7  2025 jupyter-lab
+-rwxr-xr-x 1 root root      234 Aug  7  2025 jupyter-labextension
+-rwxr-xr-x 1 root root      230 Aug  7  2025 jupyter-labhub
+-rwxr-xr-x 1 root root      230 Aug  7  2025 jupyter-migrate
+-rwxr-xr-x 1 root root      232 Aug  7  2025 jupyter-nbconvert
+-rwxr-xr-x 1 root root      251 Aug  7  2025 jupyter-run
+-rwxr-xr-x 1 root root      234 Aug  7  2025 jupyter-server
+-rwxr-xr-x 1 root root      235 Aug  7  2025 jupyter-troubleshoot
+-rwxr-xr-x 1 root root      263 Aug  7  2025 jupyter-trust
+-rwxr-xr-x 2 root root     2004 Jun 16  2023 k5srvutil
+-rwxr-xr-x 2 root root    98664 Jun 16  2023 kadmin
+-rwxr-xr-x 2 root root    16872 Jun 16  2023 kdestroy
+-rwxr-xr-x 2 root root    41200 Jun 16  2023 kinit
+-rwxr-xr-x 2 root root    36224 Jun 16  2023 klist
+-rwxr-xr-x 2 root root    17176 Jun 16  2023 kpasswd
+-rwxr-xr-x 1 root root     7060 May 19  2025 krb5-config
+-rwxr-xr-x 2 root root    65024 Jun 16  2023 ksu
+-rwxr-xr-x 2 root root    16528 Jun 16  2023 kswitch
+-rwxr-xr-x 2 root root    38368 Jun 16  2023 ktutil
+-rwxr-xr-x 2 root root    27216 Jun 16  2023 kvno
+-rwxr-xr-x 2 root root   215016 May  1  2024 lz4
+lrwxrwxrwx 1 root root        3 May 19  2025 lz4c -> lz4
+lrwxrwxrwx 1 root root        3 May 19  2025 lz4cat -> lz4
+lrwxrwxrwx 1 root root        2 May 19  2025 lzcat -> xz
+lrwxrwxrwx 1 root root        6 May 19  2025 lzcmp -> xzdiff
+lrwxrwxrwx 1 root root        6 May 19  2025 lzdiff -> xzdiff
+lrwxrwxrwx 1 root root        6 May 19  2025 lzegrep -> xzgrep
+lrwxrwxrwx 1 root root        6 May 19  2025 lzfgrep -> xzgrep
+lrwxrwxrwx 1 root root        6 May 19  2025 lzgrep -> xzgrep
+lrwxrwxrwx 1 root root        6 May 19  2025 lzless -> xzless
+lrwxrwxrwx 1 root root        2 May 19  2025 lzma -> xz
+-rwxr-xr-x 2 root root    17184 May  1  2024 lzmadec
+-rwxr-xr-x 1 root root    17016 May 19  2025 lzmainfo
+lrwxrwxrwx 1 root root        6 May 19  2025 lzmore -> xzmore
+-rwxr-xr-x 2 root root    67488 Aug 18  2023 makeconv
+-rwxr-xr-x 2 root root   688920 Apr 30  2024 mamba-package
+-rwxr-xr-x 1 root root      225 Aug  7  2025 markdown_py
+-rwxr-xr-x 2 root root    21656 Apr 30  2024 mergesolv
+-rwxr-xr-x 1 root root     8902 May 19  2025 ncursesw6-config
+-rwxr-xr-x 2 root root   258632 Oct 11  2023 nghttp
+-rwxr-xr-x 2 root root   188568 Oct 11  2023 nghttpd
+-rwxr-xr-x 1 root root  1286624 May 19  2025 nghttpx
+-rwxr-xr-x 1 root root      262 May 19  2025 normalizer
+-rwxr-xr-x 1 root root      227 Aug  7  2025 numpy-config
+-rwxr-xr-x 2 root root  1098320 May  1  2024 openssl
+-rwxr-xr-x 1 root root     2185 May 19  2025 pcre2-config
+-rwxr-xr-x 2 root root  1681040 May  2  2024 pcre2_jit_test
+-rwxr-xr-x 2 root root   658704 May  2  2024 pcre2grep
+-rwxr-xr-x 2 root root   605928 May  2  2024 pcre2posix_test
+-rwxr-xr-x 2 root root  1972928 May  2  2024 pcre2test
+-rwxr-xr-x 1 root root      229 Aug  7  2025 pidproxy
+-rwxr-xr-x 1 root root      236 May 19  2025 pip
+-rwxr-xr-x 1 root root      236 May 19  2025 pip3
+-rwxr-xr-x 2 root root    50744 Aug 18  2023 pkgdata
+-rwxr-xr-x 1 root root      232 Aug  7  2025 proton
+-rwxr-xr-x 1 root root      232 Aug  7  2025 proton-viewer
+-rwxr-xr-x 1 root root      233 Aug  7  2025 pybabel
+lrwxrwxrwx 1 root root        9 May 19  2025 pydoc -> pydoc3.12
+lrwxrwxrwx 1 root root        9 May 19  2025 pydoc3 -> pydoc3.12
+-rwxr-xr-x 1 root root       91 May 19  2025 pydoc3.12
+-rwxr-xr-x 1 root root      225 Aug  7  2025 pyftmerge
+-rwxr-xr-x 1 root root      226 Aug  7  2025 pyftsubset
+-rwxr-xr-x 1 root root      226 Aug  7  2025 pygmentize
+-rwxr-xr-x 1 root root      220 Aug  7  2025 pyjson5
+lrwxrwxrwx 1 root root       10 May 19  2025 python -> python3.12
+lrwxrwxrwx 1 root root       10 May 19  2025 python3 -> python3.12
+lrwxrwxrwx 1 root root       17 May 19  2025 python3-config -> python3.12-config
+lrwxrwxrwx 1 root root       10 May 19  2025 python3.1 -> python3.12
+-rwxr-xr-x 1 root root 30627224 May 19  2025 python3.12
+-rwxr-xr-x 1 root root     3419 May 19  2025 python3.12-config
+-rwxr-xr-x 2 root root    22280 Apr 30  2024 repo2solv
+lrwxrwxrwx 1 root root        4 May 19  2025 reset -> tset
+-rwxr-xr-x 2 root root    17248 Jun 16  2023 sclient
+-rwxr-xr-x 1 root root      229 Aug  7  2025 send2trash
+-rwxr-xr-x 2 root root    17152 Jun 16  2023 sim_client
+-rwxr-xr-x 2 root root  1777144 Apr 30  2024 sqlite3
+-rwxr-xr-x 2 root root    30392 May  4  2024 sqlite3_analyzer
+-rwxr-xr-x 1 root root      234 Aug  7  2025 supervisorctl
+-rwxr-xr-x 1 root root      232 Aug  7  2025 supervisord
+-rwxr-xr-x 2 root root    22424 Jan 26  2023 tabs
+lrwxrwxrwx 1 root root        8 May 19  2025 tclsh -> tclsh8.6
+-rwxr-xr-x 2 root root    15984 May  4  2024 tclsh8.6
+-rwxr-xr-x 1 root root      234 Aug  7  2025 tensorboard
+-rwxr-xr-x 2 root root    27528 Apr 30  2024 testsolv
+-rwxr-xr-x 2 root root    92248 Jan 26  2023 tic
+-rwxr-xr-x 2 root root    22424 Jan 26  2023 toe
+-rwxr-xr-x 1 root root      240 Aug  7  2025 torchfrtrace
+-rwxr-xr-x 1 root root      231 Aug  7  2025 torchrun
+-rwxr-xr-x 2 root root    22528 Jan 26  2023 tput
+-rwxr-xr-x 1 root root      222 May 19  2025 tqdm
+-rwxr-xr-x 2 root root    30696 Jan 26  2023 tset
+-rwxr-xr-x 1 root root      223 Aug  7  2025 ttx
+lrwxrwxrwx 1 root root        3 May 19  2025 unlz4 -> lz4
+lrwxrwxrwx 1 root root        2 May 19  2025 unlzma -> xz
+lrwxrwxrwx 1 root root        2 May 19  2025 unxz -> xz
+lrwxrwxrwx 1 root root        4 May 19  2025 unzstd -> zstd
+-rwxr-xr-x 2 root root    21792 Jun 16  2023 uuclient
+-rwxr-xr-x 1 root root      223 May 19  2025 wheel
+lrwxrwxrwx 1 root root        7 May 19  2025 wish -> wish8.6
+-rwxr-xr-x 2 root root    16136 May  4  2024 wish8.6
+-rwxr-xr-x 1 root root      227 Aug  7  2025 wsdump
+-rwxr-xr-x 2 root root  2777592 May 19  2022 x86_64-conda-linux-gnu-ld
+lrwxrwxrwx 1 root root       25 May 19  2025 x86_64-conda_cos7-linux-gnu-ld -> x86_64-conda-linux-gnu-ld
+-rwxr-xr-x 1 root root     1931 May 19  2025 xml2-config
+-rwxr-xr-x 1 root root    26224 May 19  2025 xmlcatalog
+-rwxr-xr-x 1 root root    88896 May 19  2025 xmllint
+-rwxr-xr-x 2 root root    41768 Apr 19  2024 xmlwf
+-rwxr-xr-x 1 root root   103848 May 19  2025 xz
+lrwxrwxrwx 1 root root        2 May 19  2025 xzcat -> xz
+lrwxrwxrwx 1 root root        6 May 19  2025 xzcmp -> xzdiff
+-rwxr-xr-x 2 root root    17184 May  1  2024 xzdec
+-rwxr-xr-x 2 root root     7422 May  1  2024 xzdiff
+lrwxrwxrwx 1 root root        6 May 19  2025 xzegrep -> xzgrep
+lrwxrwxrwx 1 root root        6 May 19  2025 xzfgrep -> xzgrep
+-rwxr-xr-x 2 root root    10333 May  1  2024 xzgrep
+-rwxr-xr-x 2 root root     1813 May  1  2024 xzless
+-rwxr-xr-x 2 root root     2190 May  1  2024 xzmore
+-rwxr-xr-x 2 root root   209464 May  3  2024 zstd
+lrwxrwxrwx 1 root root        4 May 19  2025 zstdcat -> zstd
+-rwxr-xr-x 2 root root     3869 Apr  5  2023 zstdgrep
+-rwxr-xr-x 2 root root      197 Apr  5  2023 zstdless
+lrwxrwxrwx 1 root root        4 May 19  2025 zstdmt -> zstd
+total 0
+drwxr-xr-x 2 root root 10 Jan 26  2025 .
+drwxr-xr-x 1 root root 27 Mar 11  2025 ..

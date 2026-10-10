@@ -1,0 +1,4894 @@
+{
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "checks": [
+    "Python syntax OK",
+    "/ OK",
+    "/js/jquery.js OK",
+    "/js/echarts.min.js OK",
+    "/js/js.js OK",
+    "/css/comon0.css OK",
+    "/api/health OK",
+    "/api/dashboard OK",
+    "/api/samples OK",
+    "Real trained models: upload, inference and result image OK",
+    "Demo sample inference OK"
+  ],
+  "model_status": {
+    "demo_reason": "",
+    "models": [
+      {
+        "latency_ms": 0.0,
+        "name": "YOLOv8m-seg",
+        "role": "光伏板区域分割",
+        "status": "ready",
+        "weights": "D:\\大创yolo\\backend\\models\\panel_yolov8_seg.pt"
+      },
+      {
+        "latency_ms": 0.0,
+        "name": "YOLO11m-seg",
+        "role": "备用多缺陷分割",
+        "status": "demo",
+        "weights": "D:\\大创yolo\\backend\\models\\defect_yolo11_seg.pt"
+      },
+      {
+        "latency_ms": 0.0,
+        "name": "YOLOv8 tile-cls",
+        "role": "面板 tile 污染等级分类",
+        "status": "ready",
+        "weights": "D:\\大创yolo\\backend\\models\\dust_yolov8_cls.pt"
+      }
+    ],
+    "ok": true,
+    "runtime_mode": "yolo-tile",
+    "samples_ready": true,
+    "targets": {
+      "dice": 0.96,
+      "edge_latency_ms": 500,
+      "gpu_latency_ms": 50,
+      "iou": 0.95,
+      "macro_f1": 0.93,
+      "pixel_accuracy": 0.98
+    }
+  },
+  "analysis": {
+    "history_entry": {
+      "avg_confidence": 0.581,
+      "crack_length": 0,
+      "crack_strength": 0.0,
+      "defect_breakdown": {
+        "crack": 0,
+        "dust": 1,
+        "other": 0,
+        "stain": 0
+      },
+      "dirty_panels": 1,
+      "dominant_issue": "灰尘",
+      "dust_coverage": 16.12,
+      "filename": "1677069178370_jpg.rf.5422103387506171b3aa7b70a730c646.jpg",
+      "id": "6ff1da863aa6",
+      "metrics_version": 4,
+      "mode": "yolo-tile",
+      "panel_count": 1,
+      "panel_ranking": [
+        {
+          "label": "Panel-1 (70.98)",
+          "name": "Panel-1",
+          "risk": 70.98
+        }
+      ],
+      "panel_stats": [
+        {
+          "avg_confidence": 0.581,
+          "coverage_ratio": 0.4053,
+          "detection_count": 1,
+          "dominant_issue": "灰尘",
+          "id": "Panel-1",
+          "issue_breakdown": {
+            "crack": 0,
+            "dust": 1,
+            "other": 0,
+            "stain": 0
+          },
+          "level": "high",
+          "level_label": "高",
+          "max_coverage_ratio": 0.4053,
+          "risk_score": 70.98,
+          "severity_breakdown": {
+            "high": 1,
+            "low": 0,
+            "medium": 0
+          },
+          "severity_score": 90.0
+        }
+      ],
+      "recommendations": [
+        "灰尘覆盖率偏高，建议优先安排清洗任务，并复核阵列倾角与排灰条件。",
+        "异常面板占比较高，建议按阵列分区生成清洁与检修工单。"
+      ],
+      "result_image_url": "/api/results/20261008_220705_6e4ad657.png",
+      "risk_score": 65.84,
+      "runtime_ms": {
+        "defect": 509.35,
+        "panel": 586.09,
+        "render": 214.81,
+        "total": 1415.9
+      },
+      "severity_breakdown": {
+        "high": 1,
+        "low": 0,
+        "medium": 0
+      },
+      "stain_coverage": 0,
+      "timestamp": "2026-10-08T22:07:05",
+      "total_defects": 1
+    },
+    "result": {
+      "detections": [
+        {
+          "area_ratio": 0.1612,
+          "bbox": [
+            231.59,
+            152.27,
+            758.04,
+            1254.6
+          ],
+          "confidence": 0.581,
+          "label": "灰尘",
+          "length_px": 0.0,
+          "length_ratio": 0.0,
+          "panel_coverage_ratio": 0.4053,
+          "panel_id": "Panel-1",
+          "polygon": null,
+          "risk_score": 94.44,
+          "severity": "high",
+          "severity_label": "高",
+          "tile_breakdown": {
+            "high": 0.1964,
+            "low": 0.542,
+            "medium": 0.2616
+          },
+          "tile_regions": [
+            {
+              "bbox": [
+                271.0,
+                152.0,
+                311.0,
+                192.0
+              ],
+              "confidence": 0.463,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                311.0,
+                152.0,
+                351.0,
+                192.0
+              ],
+              "confidence": 0.544,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                351.0,
+                152.0,
+                391.0,
+                192.0
+              ],
+              "confidence": 0.361,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                391.0,
+                152.0,
+                431.0,
+                192.0
+              ],
+              "confidence": 0.766,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                431.0,
+                152.0,
+                471.0,
+                192.0
+              ],
+              "confidence": 0.64,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                471.0,
+                152.0,
+                511.0,
+                192.0
+              ],
+              "confidence": 0.363,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                152.0,
+                551.0,
+                192.0
+              ],
+              "confidence": 0.337,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                231.0,
+                192.0,
+                271.0,
+                232.0
+              ],
+              "confidence": 0.661,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                192.0,
+                311.0,
+                232.0
+              ],
+              "confidence": 0.851,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                192.0,
+                351.0,
+                232.0
+              ],
+              "confidence": 0.488,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                351.0,
+                192.0,
+                391.0,
+                232.0
+              ],
+              "confidence": 0.456,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                192.0,
+                431.0,
+                232.0
+              ],
+              "confidence": 0.494,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                431.0,
+                192.0,
+                471.0,
+                232.0
+              ],
+              "confidence": 0.56,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                192.0,
+                511.0,
+                232.0
+              ],
+              "confidence": 0.657,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                192.0,
+                551.0,
+                232.0
+              ],
+              "confidence": 0.694,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                192.0,
+                591.0,
+                232.0
+              ],
+              "confidence": 0.432,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                192.0,
+                631.0,
+                232.0
+              ],
+              "confidence": 0.801,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                192.0,
+                671.0,
+                232.0
+              ],
+              "confidence": 0.705,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                192.0,
+                711.0,
+                232.0
+              ],
+              "confidence": 0.578,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                192.0,
+                751.0,
+                232.0
+              ],
+              "confidence": 0.558,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                232.0,
+                271.0,
+                272.0
+              ],
+              "confidence": 0.442,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                271.0,
+                232.0,
+                311.0,
+                272.0
+              ],
+              "confidence": 0.533,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                232.0,
+                351.0,
+                272.0
+              ],
+              "confidence": 0.775,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                232.0,
+                391.0,
+                272.0
+              ],
+              "confidence": 0.458,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                391.0,
+                232.0,
+                431.0,
+                272.0
+              ],
+              "confidence": 0.63,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                431.0,
+                232.0,
+                471.0,
+                272.0
+              ],
+              "confidence": 0.549,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                232.0,
+                511.0,
+                272.0
+              ],
+              "confidence": 0.537,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                232.0,
+                551.0,
+                272.0
+              ],
+              "confidence": 0.632,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                232.0,
+                591.0,
+                272.0
+              ],
+              "confidence": 0.433,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                232.0,
+                631.0,
+                272.0
+              ],
+              "confidence": 0.568,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                232.0,
+                671.0,
+                272.0
+              ],
+              "confidence": 0.624,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                232.0,
+                711.0,
+                272.0
+              ],
+              "confidence": 0.654,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                232.0,
+                751.0,
+                272.0
+              ],
+              "confidence": 0.575,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                272.0,
+                271.0,
+                312.0
+              ],
+              "confidence": 0.649,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                272.0,
+                311.0,
+                312.0
+              ],
+              "confidence": 0.489,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                311.0,
+                272.0,
+                351.0,
+                312.0
+              ],
+              "confidence": 0.601,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                272.0,
+                391.0,
+                312.0
+              ],
+              "confidence": 0.677,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                272.0,
+                431.0,
+                312.0
+              ],
+              "confidence": 0.47,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                431.0,
+                272.0,
+                471.0,
+                312.0
+              ],
+              "confidence": 0.366,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                272.0,
+                511.0,
+                312.0
+              ],
+              "confidence": 0.482,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                511.0,
+                272.0,
+                551.0,
+                312.0
+              ],
+              "confidence": 0.646,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                272.0,
+                591.0,
+                312.0
+              ],
+              "confidence": 0.723,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                591.0,
+                272.0,
+                631.0,
+                312.0
+              ],
+              "confidence": 0.609,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                272.0,
+                671.0,
+                312.0
+              ],
+              "confidence": 0.754,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                272.0,
+                711.0,
+                312.0
+              ],
+              "confidence": 0.535,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                272.0,
+                751.0,
+                312.0
+              ],
+              "confidence": 0.417,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                312.0,
+                271.0,
+                352.0
+              ],
+              "confidence": 0.545,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                271.0,
+                312.0,
+                311.0,
+                352.0
+              ],
+              "confidence": 0.472,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                312.0,
+                351.0,
+                352.0
+              ],
+              "confidence": 0.635,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                312.0,
+                391.0,
+                352.0
+              ],
+              "confidence": 0.596,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                312.0,
+                431.0,
+                352.0
+              ],
+              "confidence": 0.671,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                431.0,
+                312.0,
+                471.0,
+                352.0
+              ],
+              "confidence": 0.919,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                312.0,
+                511.0,
+                352.0
+              ],
+              "confidence": 0.576,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                511.0,
+                312.0,
+                551.0,
+                352.0
+              ],
+              "confidence": 0.688,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                551.0,
+                312.0,
+                591.0,
+                352.0
+              ],
+              "confidence": 0.594,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                312.0,
+                631.0,
+                352.0
+              ],
+              "confidence": 0.674,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                312.0,
+                671.0,
+                352.0
+              ],
+              "confidence": 0.572,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                312.0,
+                711.0,
+                352.0
+              ],
+              "confidence": 0.491,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                312.0,
+                751.0,
+                352.0
+              ],
+              "confidence": 0.526,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                352.0,
+                271.0,
+                392.0
+              ],
+              "confidence": 0.692,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                271.0,
+                352.0,
+                311.0,
+                392.0
+              ],
+              "confidence": 0.545,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                311.0,
+                352.0,
+                351.0,
+                392.0
+              ],
+              "confidence": 0.625,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                352.0,
+                391.0,
+                392.0
+              ],
+              "confidence": 0.686,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                352.0,
+                431.0,
+                392.0
+              ],
+              "confidence": 0.359,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                431.0,
+                352.0,
+                471.0,
+                392.0
+              ],
+              "confidence": 0.499,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                471.0,
+                352.0,
+                511.0,
+                392.0
+              ],
+              "confidence": 0.899,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                511.0,
+                352.0,
+                551.0,
+                392.0
+              ],
+              "confidence": 0.765,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                551.0,
+                352.0,
+                591.0,
+                392.0
+              ],
+              "confidence": 0.624,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                352.0,
+                631.0,
+                392.0
+              ],
+              "confidence": 0.394,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                352.0,
+                671.0,
+                392.0
+              ],
+              "confidence": 0.424,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                671.0,
+                352.0,
+                711.0,
+                392.0
+              ],
+              "confidence": 0.366,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                711.0,
+                352.0,
+                751.0,
+                392.0
+              ],
+              "confidence": 0.652,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                231.0,
+                392.0,
+                271.0,
+                432.0
+              ],
+              "confidence": 0.794,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                271.0,
+                392.0,
+                311.0,
+                432.0
+              ],
+              "confidence": 0.86,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                311.0,
+                392.0,
+                351.0,
+                432.0
+              ],
+              "confidence": 0.609,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                351.0,
+                392.0,
+                391.0,
+                432.0
+              ],
+              "confidence": 0.417,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                391.0,
+                392.0,
+                431.0,
+                432.0
+              ],
+              "confidence": 0.747,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                431.0,
+                392.0,
+                471.0,
+                432.0
+              ],
+              "confidence": 0.457,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                392.0,
+                511.0,
+                432.0
+              ],
+              "confidence": 0.412,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                511.0,
+                392.0,
+                551.0,
+                432.0
+              ],
+              "confidence": 0.563,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                551.0,
+                392.0,
+                591.0,
+                432.0
+              ],
+              "confidence": 0.52,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                392.0,
+                631.0,
+                432.0
+              ],
+              "confidence": 0.578,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                392.0,
+                671.0,
+                432.0
+              ],
+              "confidence": 0.443,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                392.0,
+                711.0,
+                432.0
+              ],
+              "confidence": 0.563,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                392.0,
+                751.0,
+                432.0
+              ],
+              "confidence": 0.603,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                231.0,
+                432.0,
+                271.0,
+                472.0
+              ],
+              "confidence": 0.941,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                271.0,
+                432.0,
+                311.0,
+                472.0
+              ],
+              "confidence": 0.677,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                311.0,
+                432.0,
+                351.0,
+                472.0
+              ],
+              "confidence": 0.479,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                351.0,
+                432.0,
+                391.0,
+                472.0
+              ],
+              "confidence": 0.663,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                391.0,
+                432.0,
+                431.0,
+                472.0
+              ],
+              "confidence": 0.403,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                431.0,
+                432.0,
+                471.0,
+                472.0
+              ],
+              "confidence": 0.415,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                432.0,
+                511.0,
+                472.0
+              ],
+              "confidence": 0.744,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                511.0,
+                432.0,
+                551.0,
+                472.0
+              ],
+              "confidence": 0.575,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                551.0,
+                432.0,
+                591.0,
+                472.0
+              ],
+              "confidence": 0.767,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                432.0,
+                631.0,
+                472.0
+              ],
+              "confidence": 0.625,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                631.0,
+                432.0,
+                671.0,
+                472.0
+              ],
+              "confidence": 0.632,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                432.0,
+                711.0,
+                472.0
+              ],
+              "confidence": 0.556,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                711.0,
+                432.0,
+                751.0,
+                472.0
+              ],
+              "confidence": 0.644,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                472.0,
+                271.0,
+                512.0
+              ],
+              "confidence": 0.632,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                271.0,
+                472.0,
+                311.0,
+                512.0
+              ],
+              "confidence": 0.91,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                311.0,
+                472.0,
+                351.0,
+                512.0
+              ],
+              "confidence": 0.462,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                351.0,
+                472.0,
+                391.0,
+                512.0
+              ],
+              "confidence": 0.882,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                391.0,
+                472.0,
+                431.0,
+                512.0
+              ],
+              "confidence": 0.975,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                431.0,
+                472.0,
+                471.0,
+                512.0
+              ],
+              "confidence": 0.367,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                471.0,
+                472.0,
+                511.0,
+                512.0
+              ],
+              "confidence": 0.356,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                511.0,
+                472.0,
+                551.0,
+                512.0
+              ],
+              "confidence": 0.8,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                551.0,
+                472.0,
+                591.0,
+                512.0
+              ],
+              "confidence": 0.925,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                472.0,
+                631.0,
+                512.0
+              ],
+              "confidence": 0.642,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                472.0,
+                671.0,
+                512.0
+              ],
+              "confidence": 0.634,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                472.0,
+                711.0,
+                512.0
+              ],
+              "confidence": 0.63,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                472.0,
+                751.0,
+                512.0
+              ],
+              "confidence": 0.59,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                512.0,
+                271.0,
+                552.0
+              ],
+              "confidence": 0.436,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                271.0,
+                512.0,
+                311.0,
+                552.0
+              ],
+              "confidence": 0.696,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                311.0,
+                512.0,
+                351.0,
+                552.0
+              ],
+              "confidence": 0.534,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                351.0,
+                512.0,
+                391.0,
+                552.0
+              ],
+              "confidence": 0.504,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                391.0,
+                512.0,
+                431.0,
+                552.0
+              ],
+              "confidence": 0.465,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                431.0,
+                512.0,
+                471.0,
+                552.0
+              ],
+              "confidence": 0.522,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                471.0,
+                512.0,
+                511.0,
+                552.0
+              ],
+              "confidence": 0.503,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                512.0,
+                551.0,
+                552.0
+              ],
+              "confidence": 0.53,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                551.0,
+                512.0,
+                591.0,
+                552.0
+              ],
+              "confidence": 0.41,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                591.0,
+                512.0,
+                631.0,
+                552.0
+              ],
+              "confidence": 0.69,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                512.0,
+                671.0,
+                552.0
+              ],
+              "confidence": 0.628,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                512.0,
+                711.0,
+                552.0
+              ],
+              "confidence": 0.567,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                512.0,
+                751.0,
+                552.0
+              ],
+              "confidence": 0.486,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                552.0,
+                271.0,
+                592.0
+              ],
+              "confidence": 0.701,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                552.0,
+                311.0,
+                592.0
+              ],
+              "confidence": 0.808,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                552.0,
+                351.0,
+                592.0
+              ],
+              "confidence": 0.45,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                552.0,
+                391.0,
+                592.0
+              ],
+              "confidence": 0.374,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                391.0,
+                552.0,
+                431.0,
+                592.0
+              ],
+              "confidence": 0.378,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                431.0,
+                552.0,
+                471.0,
+                592.0
+              ],
+              "confidence": 0.414,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                471.0,
+                552.0,
+                511.0,
+                592.0
+              ],
+              "confidence": 0.422,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                552.0,
+                551.0,
+                592.0
+              ],
+              "confidence": 0.432,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                551.0,
+                552.0,
+                591.0,
+                592.0
+              ],
+              "confidence": 0.462,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                552.0,
+                631.0,
+                592.0
+              ],
+              "confidence": 0.611,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                552.0,
+                671.0,
+                592.0
+              ],
+              "confidence": 0.636,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                552.0,
+                711.0,
+                592.0
+              ],
+              "confidence": 0.577,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                711.0,
+                552.0,
+                751.0,
+                592.0
+              ],
+              "confidence": 0.615,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                592.0,
+                271.0,
+                632.0
+              ],
+              "confidence": 0.729,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                592.0,
+                311.0,
+                632.0
+              ],
+              "confidence": 0.627,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                592.0,
+                351.0,
+                632.0
+              ],
+              "confidence": 0.578,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                351.0,
+                592.0,
+                391.0,
+                632.0
+              ],
+              "confidence": 0.664,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                592.0,
+                431.0,
+                632.0
+              ],
+              "confidence": 0.567,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                431.0,
+                592.0,
+                471.0,
+                632.0
+              ],
+              "confidence": 0.506,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                471.0,
+                592.0,
+                511.0,
+                632.0
+              ],
+              "confidence": 0.486,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                511.0,
+                592.0,
+                551.0,
+                632.0
+              ],
+              "confidence": 0.943,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                551.0,
+                592.0,
+                591.0,
+                632.0
+              ],
+              "confidence": 0.516,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                591.0,
+                592.0,
+                631.0,
+                632.0
+              ],
+              "confidence": 0.839,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                631.0,
+                592.0,
+                671.0,
+                632.0
+              ],
+              "confidence": 0.491,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                592.0,
+                711.0,
+                632.0
+              ],
+              "confidence": 0.408,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                711.0,
+                592.0,
+                751.0,
+                632.0
+              ],
+              "confidence": 0.567,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                632.0,
+                271.0,
+                672.0
+              ],
+              "confidence": 0.614,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                271.0,
+                632.0,
+                311.0,
+                672.0
+              ],
+              "confidence": 0.923,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                632.0,
+                351.0,
+                672.0
+              ],
+              "confidence": 0.363,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                351.0,
+                632.0,
+                391.0,
+                672.0
+              ],
+              "confidence": 0.516,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                632.0,
+                431.0,
+                672.0
+              ],
+              "confidence": 0.452,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                431.0,
+                632.0,
+                471.0,
+                672.0
+              ],
+              "confidence": 0.808,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                471.0,
+                632.0,
+                511.0,
+                672.0
+              ],
+              "confidence": 0.535,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                632.0,
+                551.0,
+                672.0
+              ],
+              "confidence": 0.765,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                551.0,
+                632.0,
+                591.0,
+                672.0
+              ],
+              "confidence": 0.651,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                591.0,
+                632.0,
+                631.0,
+                672.0
+              ],
+              "confidence": 0.551,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                631.0,
+                632.0,
+                671.0,
+                672.0
+              ],
+              "confidence": 0.85,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                671.0,
+                632.0,
+                711.0,
+                672.0
+              ],
+              "confidence": 0.538,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                632.0,
+                751.0,
+                672.0
+              ],
+              "confidence": 0.499,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                672.0,
+                271.0,
+                712.0
+              ],
+              "confidence": 0.856,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                672.0,
+                311.0,
+                712.0
+              ],
+              "confidence": 0.555,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                672.0,
+                351.0,
+                712.0
+              ],
+              "confidence": 0.483,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                351.0,
+                672.0,
+                391.0,
+                712.0
+              ],
+              "confidence": 0.383,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                391.0,
+                672.0,
+                431.0,
+                712.0
+              ],
+              "confidence": 0.582,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                431.0,
+                672.0,
+                471.0,
+                712.0
+              ],
+              "confidence": 0.504,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                471.0,
+                672.0,
+                511.0,
+                712.0
+              ],
+              "confidence": 0.544,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                672.0,
+                551.0,
+                712.0
+              ],
+              "confidence": 0.537,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                551.0,
+                672.0,
+                591.0,
+                712.0
+              ],
+              "confidence": 0.52,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                672.0,
+                631.0,
+                712.0
+              ],
+              "confidence": 0.761,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                672.0,
+                671.0,
+                712.0
+              ],
+              "confidence": 0.348,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                671.0,
+                672.0,
+                711.0,
+                712.0
+              ],
+              "confidence": 0.825,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                711.0,
+                672.0,
+                751.0,
+                712.0
+              ],
+              "confidence": 0.465,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                712.0,
+                271.0,
+                752.0
+              ],
+              "confidence": 0.78,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                271.0,
+                712.0,
+                311.0,
+                752.0
+              ],
+              "confidence": 0.414,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                311.0,
+                712.0,
+                351.0,
+                752.0
+              ],
+              "confidence": 0.41,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                351.0,
+                712.0,
+                391.0,
+                752.0
+              ],
+              "confidence": 0.469,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                712.0,
+                431.0,
+                752.0
+              ],
+              "confidence": 0.586,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                431.0,
+                712.0,
+                471.0,
+                752.0
+              ],
+              "confidence": 0.417,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                471.0,
+                712.0,
+                511.0,
+                752.0
+              ],
+              "confidence": 0.711,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                511.0,
+                712.0,
+                551.0,
+                752.0
+              ],
+              "confidence": 0.751,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                712.0,
+                591.0,
+                752.0
+              ],
+              "confidence": 0.905,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                712.0,
+                631.0,
+                752.0
+              ],
+              "confidence": 0.706,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                631.0,
+                712.0,
+                671.0,
+                752.0
+              ],
+              "confidence": 0.526,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                712.0,
+                711.0,
+                752.0
+              ],
+              "confidence": 0.438,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                712.0,
+                751.0,
+                752.0
+              ],
+              "confidence": 0.47,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                231.0,
+                752.0,
+                271.0,
+                792.0
+              ],
+              "confidence": 0.583,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                752.0,
+                311.0,
+                792.0
+              ],
+              "confidence": 0.48,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                311.0,
+                752.0,
+                351.0,
+                792.0
+              ],
+              "confidence": 0.523,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                351.0,
+                752.0,
+                391.0,
+                792.0
+              ],
+              "confidence": 0.565,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                752.0,
+                431.0,
+                792.0
+              ],
+              "confidence": 0.459,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                431.0,
+                752.0,
+                471.0,
+                792.0
+              ],
+              "confidence": 0.602,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                752.0,
+                511.0,
+                792.0
+              ],
+              "confidence": 0.828,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                511.0,
+                752.0,
+                551.0,
+                792.0
+              ],
+              "confidence": 0.838,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                752.0,
+                591.0,
+                792.0
+              ],
+              "confidence": 0.582,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                591.0,
+                752.0,
+                631.0,
+                792.0
+              ],
+              "confidence": 0.571,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                752.0,
+                671.0,
+                792.0
+              ],
+              "confidence": 0.439,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                671.0,
+                752.0,
+                711.0,
+                792.0
+              ],
+              "confidence": 0.692,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                752.0,
+                751.0,
+                792.0
+              ],
+              "confidence": 0.687,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                792.0,
+                271.0,
+                832.0
+              ],
+              "confidence": 0.569,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                792.0,
+                311.0,
+                832.0
+              ],
+              "confidence": 0.622,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                792.0,
+                351.0,
+                832.0
+              ],
+              "confidence": 0.545,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                792.0,
+                391.0,
+                832.0
+              ],
+              "confidence": 0.883,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                792.0,
+                431.0,
+                832.0
+              ],
+              "confidence": 0.366,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                431.0,
+                792.0,
+                471.0,
+                832.0
+              ],
+              "confidence": 0.819,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                792.0,
+                511.0,
+                832.0
+              ],
+              "confidence": 0.773,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                511.0,
+                792.0,
+                551.0,
+                832.0
+              ],
+              "confidence": 0.667,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                551.0,
+                792.0,
+                591.0,
+                832.0
+              ],
+              "confidence": 0.623,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                792.0,
+                631.0,
+                832.0
+              ],
+              "confidence": 0.575,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                792.0,
+                671.0,
+                832.0
+              ],
+              "confidence": 0.549,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                792.0,
+                711.0,
+                832.0
+              ],
+              "confidence": 0.378,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                711.0,
+                792.0,
+                751.0,
+                832.0
+              ],
+              "confidence": 0.536,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                832.0,
+                271.0,
+                872.0
+              ],
+              "confidence": 0.837,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                832.0,
+                311.0,
+                872.0
+              ],
+              "confidence": 0.845,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                832.0,
+                351.0,
+                872.0
+              ],
+              "confidence": 0.54,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                832.0,
+                391.0,
+                872.0
+              ],
+              "confidence": 0.583,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                832.0,
+                431.0,
+                872.0
+              ],
+              "confidence": 0.479,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                431.0,
+                832.0,
+                471.0,
+                872.0
+              ],
+              "confidence": 0.664,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                471.0,
+                832.0,
+                511.0,
+                872.0
+              ],
+              "confidence": 0.593,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                832.0,
+                551.0,
+                872.0
+              ],
+              "confidence": 0.574,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                832.0,
+                591.0,
+                872.0
+              ],
+              "confidence": 0.534,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                591.0,
+                832.0,
+                631.0,
+                872.0
+              ],
+              "confidence": 0.542,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                832.0,
+                671.0,
+                872.0
+              ],
+              "confidence": 0.413,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                671.0,
+                832.0,
+                711.0,
+                872.0
+              ],
+              "confidence": 0.815,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                711.0,
+                832.0,
+                751.0,
+                872.0
+              ],
+              "confidence": 0.451,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                231.0,
+                872.0,
+                271.0,
+                912.0
+              ],
+              "confidence": 0.694,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                271.0,
+                872.0,
+                311.0,
+                912.0
+              ],
+              "confidence": 0.624,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                872.0,
+                351.0,
+                912.0
+              ],
+              "confidence": 0.424,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                872.0,
+                391.0,
+                912.0
+              ],
+              "confidence": 0.602,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                872.0,
+                431.0,
+                912.0
+              ],
+              "confidence": 0.379,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                431.0,
+                872.0,
+                471.0,
+                912.0
+              ],
+              "confidence": 0.552,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                471.0,
+                872.0,
+                511.0,
+                912.0
+              ],
+              "confidence": 0.837,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                872.0,
+                551.0,
+                912.0
+              ],
+              "confidence": 0.583,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                872.0,
+                591.0,
+                912.0
+              ],
+              "confidence": 0.408,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                591.0,
+                872.0,
+                631.0,
+                912.0
+              ],
+              "confidence": 0.543,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                872.0,
+                671.0,
+                912.0
+              ],
+              "confidence": 0.648,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                872.0,
+                711.0,
+                912.0
+              ],
+              "confidence": 0.422,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                872.0,
+                751.0,
+                912.0
+              ],
+              "confidence": 0.751,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                912.0,
+                271.0,
+                952.0
+              ],
+              "confidence": 0.56,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                271.0,
+                912.0,
+                311.0,
+                952.0
+              ],
+              "confidence": 0.498,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                912.0,
+                351.0,
+                952.0
+              ],
+              "confidence": 0.452,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                351.0,
+                912.0,
+                391.0,
+                952.0
+              ],
+              "confidence": 0.437,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                391.0,
+                912.0,
+                431.0,
+                952.0
+              ],
+              "confidence": 0.413,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                431.0,
+                912.0,
+                471.0,
+                952.0
+              ],
+              "confidence": 0.541,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                912.0,
+                511.0,
+                952.0
+              ],
+              "confidence": 0.766,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                912.0,
+                551.0,
+                952.0
+              ],
+              "confidence": 0.478,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                912.0,
+                591.0,
+                952.0
+              ],
+              "confidence": 0.4,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                591.0,
+                912.0,
+                631.0,
+                952.0
+              ],
+              "confidence": 0.47,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                631.0,
+                912.0,
+                671.0,
+                952.0
+              ],
+              "confidence": 0.601,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                912.0,
+                711.0,
+                952.0
+              ],
+              "confidence": 0.729,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                912.0,
+                751.0,
+                952.0
+              ],
+              "confidence": 0.84,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                952.0,
+                271.0,
+                992.0
+              ],
+              "confidence": 0.615,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                271.0,
+                952.0,
+                311.0,
+                992.0
+              ],
+              "confidence": 0.537,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                952.0,
+                351.0,
+                992.0
+              ],
+              "confidence": 0.438,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                351.0,
+                952.0,
+                391.0,
+                992.0
+              ],
+              "confidence": 0.509,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                952.0,
+                431.0,
+                992.0
+              ],
+              "confidence": 0.473,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                431.0,
+                952.0,
+                471.0,
+                992.0
+              ],
+              "confidence": 0.638,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                952.0,
+                511.0,
+                992.0
+              ],
+              "confidence": 0.632,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                952.0,
+                551.0,
+                992.0
+              ],
+              "confidence": 0.797,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                952.0,
+                591.0,
+                992.0
+              ],
+              "confidence": 0.507,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                591.0,
+                952.0,
+                631.0,
+                992.0
+              ],
+              "confidence": 0.579,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                952.0,
+                671.0,
+                992.0
+              ],
+              "confidence": 0.669,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                952.0,
+                711.0,
+                992.0
+              ],
+              "confidence": 0.924,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                952.0,
+                751.0,
+                992.0
+              ],
+              "confidence": 0.66,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                992.0,
+                271.0,
+                1032.0
+              ],
+              "confidence": 0.529,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                992.0,
+                311.0,
+                1032.0
+              ],
+              "confidence": 0.634,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                992.0,
+                351.0,
+                1032.0
+              ],
+              "confidence": 0.403,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                992.0,
+                391.0,
+                1032.0
+              ],
+              "confidence": 0.461,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                391.0,
+                992.0,
+                431.0,
+                1032.0
+              ],
+              "confidence": 0.424,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                431.0,
+                992.0,
+                471.0,
+                1032.0
+              ],
+              "confidence": 0.449,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                471.0,
+                992.0,
+                511.0,
+                1032.0
+              ],
+              "confidence": 0.71,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                992.0,
+                551.0,
+                1032.0
+              ],
+              "confidence": 0.618,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                992.0,
+                591.0,
+                1032.0
+              ],
+              "confidence": 0.46,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                591.0,
+                992.0,
+                631.0,
+                1032.0
+              ],
+              "confidence": 0.456,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                992.0,
+                671.0,
+                1032.0
+              ],
+              "confidence": 0.622,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                992.0,
+                711.0,
+                1032.0
+              ],
+              "confidence": 0.445,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                992.0,
+                751.0,
+                1032.0
+              ],
+              "confidence": 0.536,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                1032.0,
+                271.0,
+                1072.0
+              ],
+              "confidence": 0.423,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                271.0,
+                1032.0,
+                311.0,
+                1072.0
+              ],
+              "confidence": 0.429,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                311.0,
+                1032.0,
+                351.0,
+                1072.0
+              ],
+              "confidence": 0.404,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                351.0,
+                1032.0,
+                391.0,
+                1072.0
+              ],
+              "confidence": 0.68,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                1032.0,
+                431.0,
+                1072.0
+              ],
+              "confidence": 0.406,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                431.0,
+                1032.0,
+                471.0,
+                1072.0
+              ],
+              "confidence": 0.564,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                1032.0,
+                511.0,
+                1072.0
+              ],
+              "confidence": 0.567,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                1032.0,
+                551.0,
+                1072.0
+              ],
+              "confidence": 0.461,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                1032.0,
+                591.0,
+                1072.0
+              ],
+              "confidence": 0.486,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                591.0,
+                1032.0,
+                631.0,
+                1072.0
+              ],
+              "confidence": 0.459,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                1032.0,
+                671.0,
+                1072.0
+              ],
+              "confidence": 0.644,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                1032.0,
+                711.0,
+                1072.0
+              ],
+              "confidence": 0.777,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                711.0,
+                1032.0,
+                751.0,
+                1072.0
+              ],
+              "confidence": 0.631,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                1072.0,
+                271.0,
+                1112.0
+              ],
+              "confidence": 0.401,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                1072.0,
+                311.0,
+                1112.0
+              ],
+              "confidence": 0.589,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                1072.0,
+                351.0,
+                1112.0
+              ],
+              "confidence": 0.766,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                1072.0,
+                391.0,
+                1112.0
+              ],
+              "confidence": 0.605,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                1072.0,
+                431.0,
+                1112.0
+              ],
+              "confidence": 0.483,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                431.0,
+                1072.0,
+                471.0,
+                1112.0
+              ],
+              "confidence": 0.568,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                1072.0,
+                511.0,
+                1112.0
+              ],
+              "confidence": 0.466,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                511.0,
+                1072.0,
+                551.0,
+                1112.0
+              ],
+              "confidence": 0.645,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                551.0,
+                1072.0,
+                591.0,
+                1112.0
+              ],
+              "confidence": 0.463,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                591.0,
+                1072.0,
+                631.0,
+                1112.0
+              ],
+              "confidence": 0.462,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                1072.0,
+                671.0,
+                1112.0
+              ],
+              "confidence": 0.475,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                1072.0,
+                711.0,
+                1112.0
+              ],
+              "confidence": 0.535,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                1112.0,
+                271.0,
+                1152.0
+              ],
+              "confidence": 0.5,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                271.0,
+                1112.0,
+                311.0,
+                1152.0
+              ],
+              "confidence": 0.941,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                1112.0,
+                351.0,
+                1152.0
+              ],
+              "confidence": 0.52,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                351.0,
+                1112.0,
+                391.0,
+                1152.0
+              ],
+              "confidence": 0.545,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                1112.0,
+                431.0,
+                1152.0
+              ],
+              "confidence": 0.351,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                431.0,
+                1112.0,
+                471.0,
+                1152.0
+              ],
+              "confidence": 0.678,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                471.0,
+                1112.0,
+                511.0,
+                1152.0
+              ],
+              "confidence": 0.618,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                511.0,
+                1112.0,
+                551.0,
+                1152.0
+              ],
+              "confidence": 0.732,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                551.0,
+                1112.0,
+                591.0,
+                1152.0
+              ],
+              "confidence": 0.443,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                591.0,
+                1112.0,
+                631.0,
+                1152.0
+              ],
+              "confidence": 0.709,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                631.0,
+                1112.0,
+                671.0,
+                1152.0
+              ],
+              "confidence": 0.496,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                1112.0,
+                711.0,
+                1152.0
+              ],
+              "confidence": 0.815,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                231.0,
+                1152.0,
+                271.0,
+                1192.0
+              ],
+              "confidence": 0.359,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                1152.0,
+                311.0,
+                1192.0
+              ],
+              "confidence": 0.591,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                1152.0,
+                351.0,
+                1192.0
+              ],
+              "confidence": 0.554,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                1152.0,
+                391.0,
+                1192.0
+              ],
+              "confidence": 0.586,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                1152.0,
+                431.0,
+                1192.0
+              ],
+              "confidence": 0.404,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                431.0,
+                1152.0,
+                471.0,
+                1192.0
+              ],
+              "confidence": 0.506,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                1152.0,
+                511.0,
+                1192.0
+              ],
+              "confidence": 0.508,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                1152.0,
+                551.0,
+                1192.0
+              ],
+              "confidence": 0.386,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                1152.0,
+                591.0,
+                1192.0
+              ],
+              "confidence": 0.696,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                591.0,
+                1152.0,
+                631.0,
+                1192.0
+              ],
+              "confidence": 0.377,
+              "level": "high"
+            },
+            {
+              "bbox": [
+                631.0,
+                1152.0,
+                671.0,
+                1192.0
+              ],
+              "confidence": 0.62,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                671.0,
+                1152.0,
+                711.0,
+                1192.0
+              ],
+              "confidence": 0.513,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                231.0,
+                1192.0,
+                271.0,
+                1232.0
+              ],
+              "confidence": 0.361,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                1192.0,
+                311.0,
+                1232.0
+              ],
+              "confidence": 0.622,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                1192.0,
+                351.0,
+                1232.0
+              ],
+              "confidence": 0.579,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                1192.0,
+                391.0,
+                1232.0
+              ],
+              "confidence": 0.521,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                1192.0,
+                431.0,
+                1232.0
+              ],
+              "confidence": 0.482,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                431.0,
+                1192.0,
+                471.0,
+                1232.0
+              ],
+              "confidence": 0.614,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                1192.0,
+                511.0,
+                1232.0
+              ],
+              "confidence": 0.518,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                511.0,
+                1192.0,
+                551.0,
+                1232.0
+              ],
+              "confidence": 0.649,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                1192.0,
+                591.0,
+                1232.0
+              ],
+              "confidence": 0.394,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                591.0,
+                1192.0,
+                631.0,
+                1232.0
+              ],
+              "confidence": 0.492,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                631.0,
+                1192.0,
+                671.0,
+                1232.0
+              ],
+              "confidence": 0.355,
+              "level": "medium"
+            },
+            {
+              "bbox": [
+                231.0,
+                1232.0,
+                271.0,
+                1255.0
+              ],
+              "confidence": 0.762,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                271.0,
+                1232.0,
+                311.0,
+                1255.0
+              ],
+              "confidence": 0.727,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                311.0,
+                1232.0,
+                351.0,
+                1255.0
+              ],
+              "confidence": 0.57,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                351.0,
+                1232.0,
+                391.0,
+                1255.0
+              ],
+              "confidence": 0.699,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                391.0,
+                1232.0,
+                431.0,
+                1255.0
+              ],
+              "confidence": 0.625,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                431.0,
+                1232.0,
+                471.0,
+                1255.0
+              ],
+              "confidence": 0.72,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                471.0,
+                1232.0,
+                511.0,
+                1255.0
+              ],
+              "confidence": 0.626,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                511.0,
+                1232.0,
+                551.0,
+                1255.0
+              ],
+              "confidence": 0.742,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                551.0,
+                1232.0,
+                591.0,
+                1255.0
+              ],
+              "confidence": 0.652,
+              "level": "low"
+            },
+            {
+              "bbox": [
+                591.0,
+                1232.0,
+                631.0,
+                1255.0
+              ],
+              "confidence": 0.614,
+              "level": "low"
+            }
+          ],
+          "type": "dust"
+        }
+      ],
+      "filename": "1677069178370_jpg.rf.5422103387506171b3aa7b70a730c646.jpg",
+      "image_url": "/api/results/20261008_220705_6e4ad657.png",
+      "mode": "yolo-tile",
+      "panel_stats": [
+        {
+          "avg_confidence": 0.581,
+          "coverage_ratio": 0.4053,
+          "detection_count": 1,
+          "dominant_issue": "灰尘",
+          "id": "Panel-1",
+          "issue_breakdown": {
+            "crack": 0,
+            "dust": 1,
+            "other": 0,
+            "stain": 0
+          },
+          "level": "high",
+          "level_label": "高",
+          "max_coverage_ratio": 0.4053,
+          "risk_score": 70.98,
+          "severity_breakdown": {
+            "high": 1,
+            "low": 0,
+            "medium": 0
+          },
+          "severity_score": 90.0
+        }
+      ],
+      "panels": [
+        {
+          "area": 511655.0,
+          "bbox": [
+            231.59,
+            152.27,
+            758.04,
+            1254.6
+          ],
+          "confidence": 0.737,
+          "id": "Panel-1",
+          "polygon": [
+            [
+              733.2445678710938,
+              1212.870361328125
+            ],
+            [
+              729.1539306640625,
+              1216.9609375
+            ],
+            [
+              729.1539306640625,
+              1223.096923828125
+            ],
+            [
+              731.19921875,
+              1225.1422119140625
+            ],
+            [
+              739.3804931640625,
+              1225.1422119140625
+            ],
+            [
+              743.4711303710938,
+              1221.0516357421875
+            ],
+            [
+              743.4711303710938,
+              1214.9156494140625
+            ],
+            [
+              741.42578125,
+              1212.870361328125
+            ],
+            [
+              741.42578125,
+              1210.8250732421875
+            ],
+            [
+              737.3351440429688,
+              1210.8250732421875
+            ],
+            [
+              735.2898559570312,
+              1212.870361328125
+            ],
+            [
+              733.2445678710938,
+              1212.870361328125
+            ],
+            [
+              718.9273681640625,
+              1186.28125
+            ],
+            [
+              725.0632934570312,
+              1180.1453857421875
+            ],
+            [
+              725.0632934570312,
+              1178.0999755859375
+            ],
+            [
+              727.1085815429688,
+              1176.0546875
+            ],
+            [
+              727.1085815429688,
+              1174.0093994140625
+            ],
+            [
+              729.1539306640625,
+              1171.964111328125
+            ],
+            [
+              729.1539306640625,
+              1126.9671630859375
+            ],
+            [
+              731.19921875,
+              1124.921875
+            ],
+            [
+              731.19921875,
+              1108.5594482421875
+            ],
+            [
+              729.1539306640625,
+              1106.5140380859375
+            ],
+            [
+              729.1539306640625,
+              1086.0609130859375
+            ],
+            [
+              731.19921875,
+              1084.015625
+            ],
+            [
+              731.19921875,
+              1071.7437744140625
+            ],
+            [
+              733.2445678710938,
+              1069.698486328125
+            ],
+            [
+              733.2445678710938,
+              1067.6531982421875
+            ],
+            [
+              735.2898559570312,
+              1065.6077880859375
+            ],
+            [
+              735.2898559570312,
+              1063.5625
+            ],
+            [
+              737.3351440429688,
+              1061.5172119140625
+            ],
+            [
+              737.3351440429688,
+              1057.4266357421875
+            ],
+            [
+              739.3804931640625,
+              1055.3812255859375
+            ],
+            [
+              739.3804931640625,
+              991.9765625
+            ],
+            [
+              737.3351440429688,
+              989.9312744140625
+            ],
+            [
+              737.3351440429688,
+              951.0703125
+            ],
+            [
+              739.3804931640625,
+              949.0250244140625
+            ],
+            [
+              739.3804931640625,
+              938.7984619140625
+            ],
+            [
+              741.42578125,
+              936.7531127929688
+            ],
+            [
+              741.42578125,
+              924.4812622070312
+            ],
+            [
+              743.4711303710938,
+              922.4359741210938
+            ],
+            [
+              743.4711303710938,
+              912.2094116210938
+            ],
+            [
+              745.5164184570312,
+              910.1640625
+            ],
+            [
+              745.5164184570312,
+              899.9375
+            ],
+            [
+              747.5617065429688,
+              897.8922119140625
+            ],
+            [
+              747.5617065429688,
+              891.7562866210938
+            ],
+            [
+              749.6070556640625,
+              889.7109375
+            ],
+            [
+              755.7429809570312,
+              889.7109375
+            ],
+            [
+              755.7429809570312,
+              865.1671752929688
+            ],
+            [
+              749.6070556640625,
+              865.1671752929688
+            ],
+            [
+              747.5617065429688,
+              863.1218872070312
+            ],
+            [
+              747.5617065429688,
+              861.0765991210938
+            ],
+            [
+              745.5164184570312,
+              859.03125
+            ],
+            [
+              745.5164184570312,
+              856.9859619140625
+            ],
+            [
+              739.3804931640625,
+              850.8500366210938
+            ],
+            [
+              739.3804931640625,
+              848.8046875
+            ],
+            [
+              735.2898559570312,
+              844.7140502929688
+            ],
+            [
+              735.2898559570312,
+              842.6687622070312
+            ],
+            [
+              731.19921875,
+              838.578125
+            ],
+            [
+              731.19921875,
+              822.2156372070312
+            ],
+            [
+              733.2445678710938,
+              820.1703491210938
+            ],
+            [
+              733.2445678710938,
+              809.9437866210938
+            ],
+            [
+              735.2898559570312,
+              807.8984375
+            ],
+            [
+              735.2898559570312,
+              801.7625122070312
+            ],
+            [
+              737.3351440429688,
+              799.7172241210938
+            ],
+            [
+              737.3351440429688,
+              787.4453125
+            ],
+            [
+              739.3804931640625,
+              785.4000244140625
+            ],
+            [
+              739.3804931640625,
+              779.2640991210938
+            ],
+            [
+              741.42578125,
+              777.21875
+            ],
+            [
+              741.42578125,
+              769.0375366210938
+            ],
+            [
+              743.4711303710938,
+              766.9921875
+            ],
+            [
+              743.4711303710938,
+              748.5844116210938
+            ],
+            [
+              739.3804931640625,
+              744.4937744140625
+            ],
+            [
+              739.3804931640625,
+              740.4031372070312
+            ],
+            [
+              737.3351440429688,
+              738.3578491210938
+            ],
+            [
+              737.3351440429688,
+              734.2672119140625
+            ],
+            [
+              735.2898559570312,
+              732.2218627929688
+            ],
+            [
+              735.2898559570312,
+              730.1765747070312
+            ],
+            [
+              733.2445678710938,
+              728.1312866210938
+            ],
+            [
+              733.2445678710938,
+              726.0859375
+            ],
+            [
+              731.19921875,
+              724.0406494140625
+            ],
+            [
+              731.19921875,
+              715.859375
+            ],
+            [
+              733.2445678710938,
+              713.8140869140625
+            ],
+            [
+              733.2445678710938,
+              703.5875244140625
+            ],
+            [
+              735.2898559570312,
+              701.5421752929688
+            ],
+            [
+              735.2898559570312,
+              683.1343994140625
+            ],
+            [
+              737.3351440429688,
+              681.0890502929688
+            ],
+            [
+              737.3351440429688,
+              650.4093627929688
+            ],
+            [
+              739.3804931640625,
+              648.3640747070312
+            ],
+            [
+              739.3804931640625,
+              611.5484619140625
+            ],
+            [
+              737.3351440429688,
+              609.5031127929688
+            ],
+            [
+              737.3351440429688,
+              593.140625
+            ],
+            [
+              739.3804931640625,
+              591.0953369140625
+            ],
+            [
+              739.3804931640625,
+              578.8234252929688
+            ],
+            [
+              741.42578125,
+              576.7781372070312
+            ],
+            [
+              741.42578125,
+              568.5968627929688
+            ],
+            [
+              743.4711303710938,
+              566.5515747070312
+            ],
+            [
+              743.4711303710938,
+              560.4156494140625
+            ],
+            [
+              745.5164184570312,
+              558.3703002929688
+            ],
+            [
+              745.5164184570312,
+              550.1890869140625
+            ],
+            [
+              743.4711303710938,
+              548.1437377929688
+            ],
+            [
+              743.4711303710938,
+              542.0078125
+            ],
+            [
+              741.42578125,
+              539.9625244140625
+            ],
+            [
+              741.42578125,
+              537.9171752929688
+            ],
+            [
+              739.3804931640625,
+              535.8718872070312
+            ],
+            [
+              739.3804931640625,
+              529.7359619140625
+            ],
+            [
+              737.3351440429688,
+              527.6906127929688
+            ],
+            [
+              737.3351440429688,
+              513.3734741210938
+            ],
+            [
+              735.2898559570312,
+              511.328125
+            ],
+            [
+              735.2898559570312,
+              505.19219970703125
+            ],
+            [
+              737.3351440429688,
+              503.1468811035156
+            ],
+            [
+              737.3351440429688,
+              478.6031188964844
+            ],
+            [
+              739.3804931640625,
+              476.5578308105469
+            ],
+            [
+              739.3804931640625,
+              468.3765563964844
+            ],
+            [
+              741.42578125,
+              466.3312683105469
+            ],
+            [
+              741.42578125,
+              462.2406311035156
+            ],
+            [
+              743.4711303710938,
+              460.1953125
+            ],
+            [
+              743.4711303710938,
+              452.0140686035156
+            ],
+            [
+              741.42578125,
+              449.96875
+            ],
+            [
+              741.42578125,
+              407.0171813964844
+            ],
+            [
+              739.3804931640625,
+              404.9718933105469
+            ],
+            [
+              739.3804931640625,
+              349.7484436035156
+            ],
+            [
+              741.42578125,
+              347.703125
+            ],
+            [
+              741.42578125,
+              329.2953186035156
+            ],
+            [
+              743.4711303710938,
+              327.25
+            ],
+            [
+              743.4711303710938,
+              214.7578125
+            ],
+            [
+              741.42578125,
+              212.71250915527344
+            ],
+            [
+              741.42578125,
+              204.53125
+            ],
+            [
+              739.3804931640625,
+              202.48594665527344
+            ],
+            [
+              739.3804931640625,
+              198.3953094482422
+            ],
+            [
+              733.2445678710938,
+              192.25938415527344
+            ],
+            [
+              729.1539306640625,
+              192.25938415527344
+            ],
+            [
+              727.1085815429688,
+              190.2140655517578
+            ],
+            [
+              712.7914428710938,
+              190.2140655517578
+            ],
+            [
+              710.74609375,
+              192.25938415527344
+            ],
+            [
+              616.6617431640625,
+              192.25938415527344
+            ],
+            [
+              614.6163940429688,
+              190.2140655517578
+            ],
+            [
+              581.8914184570312,
+              190.2140655517578
+            ],
+            [
+              579.8461303710938,
+              188.1687469482422
+            ],
+            [
+              563.4835815429688,
+              188.1687469482422
+            ],
+            [
+              561.4382934570312,
+              186.12344360351562
+            ],
+            [
+              502.1242370605469,
+              186.12344360351562
+            ],
+            [
+              495.98828125,
+              179.9875030517578
+            ],
+            [
+              493.9429626464844,
+              179.9875030517578
+            ],
+            [
+              491.8976745605469,
+              177.9421844482422
+            ],
+            [
+              489.85235595703125,
+              177.9421844482422
+            ],
+            [
+              487.8070373535156,
+              175.89688110351562
+            ],
+            [
+              485.76171875,
+              175.89688110351562
+            ],
+            [
+              483.7164001464844,
+              173.8515625
+            ],
+            [
+              479.62579345703125,
+              173.8515625
+            ],
+            [
+              477.5804748535156,
+              171.80625915527344
+            ],
+            [
+              471.4445495605469,
+              171.80625915527344
+            ],
+            [
+              467.3539123535156,
+              167.7156219482422
+            ],
+            [
+              467.3539123535156,
+              165.67031860351562
+            ],
+            [
+              465.30859375,
+              163.625
+            ],
+            [
+              465.30859375,
+              151.35313415527344
+            ],
+            [
+              391.6773376464844,
+              151.35313415527344
+            ],
+            [
+              391.6773376464844,
+              161.57969665527344
+            ],
+            [
+              393.72265625,
+              163.625
+            ],
+            [
+              393.72265625,
+              169.7609405517578
+            ],
+            [
+              391.6773376464844,
+              171.80625915527344
+            ],
+            [
+              391.6773376464844,
+              173.8515625
+            ],
+            [
+              387.58673095703125,
+              177.9421844482422
+            ],
+            [
+              383.49609375,
+              177.9421844482422
+            ],
+            [
+              381.4507751464844,
+              179.9875030517578
+            ],
+            [
+              348.7257995605469,
+              179.9875030517578
+            ],
+            [
+              344.6351623535156,
+              175.89688110351562
+            ],
+            [
+              342.58984375,
+              175.89688110351562
+            ],
+            [
+              336.45391845703125,
+              169.7609405517578
+            ],
+            [
+              334.4085998535156,
+              169.7609405517578
+            ],
+            [
+              332.36328125,
+              167.7156219482422
+            ],
+            [
+              332.36328125,
+              159.5343780517578
+            ],
+            [
+              334.4085998535156,
+              157.4890594482422
+            ],
+            [
+              334.4085998535156,
+              151.35313415527344
+            ],
+            [
+              324.1820373535156,
+              151.35313415527344
+            ],
+            [
+              324.1820373535156,
+              157.4890594482422
+            ],
+            [
+              328.2726745605469,
+              161.57969665527344
+            ],
+            [
+              328.2726745605469,
+              163.625
+            ],
+            [
+              330.3179626464844,
+              165.67031860351562
+            ],
+            [
+              324.1820373535156,
+              171.80625915527344
+            ],
+            [
+              322.13671875,
+              171.80625915527344
+            ],
+            [
+              320.0914001464844,
+              173.8515625
+            ],
+            [
+              318.0461120605469,
+              173.8515625
+            ],
+            [
+              316.00079345703125,
+              175.89688110351562
+            ],
+            [
+              264.86798095703125,
+              175.89688110351562
+            ],
+            [
+              262.8226623535156,
+              177.9421844482422
+            ],
+            [
+              260.77734375,
+              177.9421844482422
+            ],
+            [
+              256.6867370605469,
+              182.03282165527344
+            ],
+            [
+              256.6867370605469,
+              184.078125
+            ],
+            [
+              252.59609985351562,
+              188.1687469482422
+            ],
+            [
+              252.59609985351562,
+              190.2140655517578
+            ],
+            [
+              250.55078125,
+              192.25938415527344
+            ],
+            [
+              250.55078125,
+              198.3953094482422
+            ],
+            [
+              248.50547790527344,
+              200.4406280517578
+            ],
+            [
+              248.50547790527344,
+              206.57656860351562
+            ],
+            [
+              246.4601593017578,
+              208.6218719482422
+            ],
+            [
+              246.4601593017578,
+              218.8484344482422
+            ],
+            [
+              244.4148406982422,
+              220.8937530517578
+            ],
+            [
+              244.4148406982422,
+              229.0749969482422
+            ],
+            [
+              242.36953735351562,
+              231.1203155517578
+            ],
+            [
+              242.36953735351562,
+              235.2109375
+            ],
+            [
+              240.32421875,
+              237.25625610351562
+            ],
+            [
+              240.32421875,
+              247.48281860351562
+            ],
+            [
+              238.27891540527344,
+              249.5281219482422
+            ],
+            [
+              238.27891540527344,
+              251.5734405517578
+            ],
+            [
+              236.2335968017578,
+              253.61875915527344
+            ],
+            [
+              236.2335968017578,
+              255.6640625
+            ],
+            [
+              234.1882781982422,
+              257.7093811035156
+            ],
+            [
+              234.1882781982422,
+              259.75469970703125
+            ],
+            [
+              232.14297485351562,
+              261.8000183105469
+            ],
+            [
+              226.0070343017578,
+              261.8000183105469
+            ],
+            [
+              226.0070343017578,
+              574.7328491210938
+            ],
+            [
+              232.14297485351562,
+              574.7328491210938
+            ],
+            [
+              234.1882781982422,
+              576.7781372070312
+            ],
+            [
+              234.1882781982422,
+              587.0046997070312
+            ],
+            [
+              232.14297485351562,
+              589.0499877929688
+            ],
+            [
+              226.0070343017578,
+              589.0499877929688
+            ],
+            [
+              226.0070343017578,
+              1253.776611328125
+            ],
+            [
+              647.3414306640625,
+              1253.776611328125
+            ],
+            [
+              647.3414306640625,
+              1245.5953369140625
+            ],
+            [
+              645.2960815429688,
+              1243.550048828125
+            ],
+            [
+              643.2507934570312,
+              1243.550048828125
+            ],
+            [
+              641.2055053710938,
+              1241.5047607421875
+            ],
+            [
+              635.0695190429688,
+              1241.5047607421875
+            ],
+            [
+              633.0242309570312,
+              1239.4593505859375
+            ],
+            [
+              630.9789428710938,
+              1239.4593505859375
+            ],
+            [
+              628.93359375,
+              1237.4140625
+            ],
+            [
+              616.6617431640625,
+              1237.4140625
+            ],
+            [
+              614.6163940429688,
+              1235.3687744140625
+            ],
+            [
+              606.4351806640625,
+              1235.3687744140625
+            ],
+            [
+              604.3898315429688,
+              1237.4140625
+            ],
+            [
+              600.2992553710938,
+              1237.4140625
+            ],
+            [
+              598.25390625,
+              1235.3687744140625
+            ],
+            [
+              579.8461303710938,
+              1235.3687744140625
+            ],
+            [
+              577.80078125,
+              1233.323486328125
+            ],
+            [
+              573.7101440429688,
+              1233.323486328125
+            ],
+            [
+              571.6648559570312,
+              1235.3687744140625
+            ],
+            [
+              567.57421875,
+              1235.3687744140625
+            ],
+            [
+              565.5289306640625,
+              1233.323486328125
+            ],
+            [
+              553.2570190429688,
+              1233.323486328125
+            ],
+            [
+              551.2117309570312,
+              1231.2781982421875
+            ],
+            [
+              549.1664428710938,
+              1231.2781982421875
+            ],
+            [
+              547.12109375,
+              1229.2327880859375
+            ],
+            [
+              534.8492431640625,
+              1229.2327880859375
+            ],
+            [
+              532.8038940429688,
+              1227.1875
+            ],
+            [
+              483.7164001464844,
+              1227.1875
+            ],
+            [
+              481.6711120605469,
+              1225.1422119140625
+            ],
+            [
+              473.4898376464844,
+              1225.1422119140625
+            ],
+            [
+              471.4445495605469,
+              1223.096923828125
+            ],
+            [
+              467.3539123535156,
+              1223.096923828125
+            ],
+            [
+              465.30859375,
+              1221.0516357421875
+            ],
+            [
+              467.3539123535156,
+              1219.0062255859375
+            ],
+            [
+              469.39923095703125,
+              1219.0062255859375
+            ],
+            [
+              471.4445495605469,
+              1216.9609375
+            ],
+            [
+              473.4898376464844,
+              1216.9609375
+            ],
+            [
+              477.5804748535156,
+              1212.870361328125
+            ],
+            [
+              491.8976745605469,
+              1212.870361328125
+            ],
+            [
+              493.9429626464844,
+              1210.8250732421875
+            ],
+            [
+              495.98828125,
+              1212.870361328125
+            ],
+            [
+              508.2601623535156,
+              1212.870361328125
+            ],
+            [
+              510.30548095703125,
+              1214.9156494140625
+            ],
+            [
+              549.1664428710938,
+              1214.9156494140625
+            ],
+            [
+              551.2117309570312,
+              1212.870361328125
+            ],
+            [
+              563.4835815429688,
+              1212.870361328125
+            ],
+            [
+              565.5289306640625,
+              1210.8250732421875
+            ],
+            [
+              571.6648559570312,
+              1210.8250732421875
+            ],
+            [
+              573.7101440429688,
+              1212.870361328125
+            ],
+            [
+              585.9820556640625,
+              1212.870361328125
+            ],
+            [
+              588.02734375,
+              1214.9156494140625
+            ],
+            [
+              604.3898315429688,
+              1214.9156494140625
+            ],
+            [
+              606.4351806640625,
+              1216.9609375
+            ],
+            [
+              616.6617431640625,
+              1216.9609375
+            ],
+            [
+              618.70703125,
+              1219.0062255859375
+            ],
+            [
+              630.9789428710938,
+              1219.0062255859375
+            ],
+            [
+              633.0242309570312,
+              1216.9609375
+            ],
+            [
+              657.5679931640625,
+              1216.9609375
+            ],
+            [
+              659.61328125,
+              1214.9156494140625
+            ],
+            [
+              663.7039184570312,
+              1214.9156494140625
+            ],
+            [
+              665.7492065429688,
+              1212.870361328125
+            ],
+            [
+              665.7492065429688,
+              1210.8250732421875
+            ],
+            [
+              669.83984375,
+              1206.734375
+            ],
+            [
+              671.8851928710938,
+              1206.734375
+            ],
+            [
+              675.9757690429688,
+              1202.643798828125
+            ],
+            [
+              680.06640625,
+              1202.643798828125
+            ],
+            [
+              682.1117553710938,
+              1200.5985107421875
+            ],
+            [
+              686.2023315429688,
+              1200.5985107421875
+            ],
+            [
+              688.2476806640625,
+              1198.5531005859375
+            ],
+            [
+              692.3383178710938,
+              1198.5531005859375
+            ],
+            [
+              698.4742431640625,
+              1192.417236328125
+            ],
+            [
+              698.4742431640625,
+              1190.3719482421875
+            ],
+            [
+              700.51953125,
+              1188.3265380859375
+            ],
+            [
+              704.6101684570312,
+              1188.3265380859375
+            ],
+            [
+              706.6554565429688,
+              1186.28125
+            ],
+            [
+              718.9273681640625,
+              1186.28125
+            ]
+          ]
+        }
+      ],
+      "recommendations": [
+        "灰尘覆盖率偏高，建议优先安排清洗任务，并复核阵列倾角与排灰条件。",
+        "异常面板占比较高，建议按阵列分区生成清洁与检修工单。"
+      ],
+      "runtime_ms": {
+        "defect": 509.35,
+        "panel": 586.09,
+        "render": 214.81,
+        "total": 1415.9
+      },
+      "summary": {
+        "avg_confidence": 0.581,
+        "crack_length": 0,
+        "crack_strength": 0.0,
+        "dirty_panels": 1,
+        "dominant_issue": "灰尘",
+        "dust_coverage": 16.12,
+        "panel_count": 1,
+        "risk_score": 65.84,
+        "stain_coverage": 0,
+        "total_defects": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+﻿{
+    "classification":  {
+                           "splits":  {
+                                          "2_low":  {
+                                                        "train":  2661,
+                                                        "val":  296,
+                                                        "test":  635
+                                                    },
+                                          "0_High":  {
+                                                         "train":  2692,
+                                                         "val":  299,
+                                                         "test":  642
+                                                     },
+                                          "1_Moderate":  {
+                                                             "train":  2702,
+                                                             "val":  300,
+                                                             "test":  644
+                                                         }
+                                      },
+                           "prepared_root":  "D:\\大创yolo\\tmp\\prepared_training_data\\cls_severity"
+                       },
+    "segmentation":  {
+                         "yaml":  "D:\\大创yolo\\tmp\\prepared_training_data\\panel_seg_dataset.yaml"
+                     }
+}

@@ -1,0 +1,3 @@
+pid=2699
+log=/root/pv_yolo_train/logs/train_100e_20260511_215956.log
+   PID STAT     ELAPSED CMD
